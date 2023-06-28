@@ -49,22 +49,22 @@ insert into prodotto values('003','Nutella','Ferrero','5.50',null,'1.0',null,nul
 insert into prodotto values('004','Albicocche','Valfrutta','2.20',null,'1.0',null,null,'4','1','1');
 insert into prodotto values('005','Pomodori','Cirio','1.98',null,'1.0',null,null,'5','2','1');
 insert into prodotto values('006','Marmellata ai frutti di bosco','Zuegg','2.20',null,'0.500',null,null,'6','10','1');
-insert into prodotto values('007',' Acqua Naturale','Levissima','1.80','quantita 6x1.5','1.5',null,null,'7','3','');
-insert into prodotto values('008','Energy Drink','RED BULL','1.45',' lattina da 250 ml','0.250',null,null,'8','3','');
-insert into prodotto values('009','Latte Intero UHT','Parmalat','2.49',null,'1.0',null,null,'9','4','');
-insert into prodotto values('010','Formaggio','Grana Padano DOP','5.00',null,'0.400',null,null,'10','4','');
-insert into prodotto values('011','Petto di Pollo','AIA','7.99',null,'1.0',null,null,'11','5','');
-insert into prodotto values('012','Salame Milano Affettato','Rovagnati','6.25',null,'0.250',null,null,'12','5','');
-insert into prodotto values('013','Salmone Norvegese Trancio','ESSELUNGA','5.00',null,'0.200',null,null,'13','6','');
-insert into prodotto values('014','Tonno Pinna Gialla Filetto','Carrefour','3.99',null,'0.250',null,null,'14','6','');
-insert into prodotto values('015','Patatine Surgelate','Orogel','2.50',null,'0.600',null,null,'15','7','');
-insert into prodotto values('016','Gelato Variegato in vaschetta','Carte D Or','5.00',null,'1.00',null,null,'16','7','');
-insert into prodotto values('017','Spaghetti N 5','Barilla','1.30',null,'0.500',null,null,'17','8','');
-insert into prodotto values('018','Riso Oro Classico','Scotti','3.59',null,'1.0',null,null,'18','8','');
-insert into prodotto values('019','Whiskey','Jack Daniels','25.00',null,'1.0',null,null,'19','9','');
-insert into prodotto values('020','Birra','Moretti','1.66',null,'0.600',null,null,'20','9','');
-insert into prodotto values('021','Condimento insalata di riso','Sacla','4.59','2x290 g','0.290',null,null,'21','11','');
-insert into prodotto values('022','Mais conserva','Bonduelle','1.69',null,'0.300',null,null,'22','11','');
+insert into prodotto values('007',' Acqua Naturale','Levissima','1.80','quantita 6x1.5','1.5',null,null,'7','3','2');
+insert into prodotto values('008','Energy Drink','RED BULL','1.45',' lattina da 250 ml','0.250',null,null,'8','3','2');
+insert into prodotto values('009','Latte Intero UHT','Parmalat','2.49',null,'1.0',null,null,'9','4','2');
+insert into prodotto values('010','Formaggio','Grana Padano DOP','5.00',null,'0.400',null,null,'10','4','2');
+insert into prodotto values('011','Petto di Pollo','AIA','7.99',null,'1.0',null,null,'11','5','2');
+insert into prodotto values('012','Salame Milano Affettato','Rovagnati','6.25',null,'0.250',null,null,'12','5','3');
+insert into prodotto values('013','Salmone Norvegese Trancio','ESSELUNGA','5.00',null,'0.200',null,null,'13','6','3');
+insert into prodotto values('014','Tonno Pinna Gialla Filetto','Carrefour','3.99',null,'0.250',null,null,'14','6','3');
+insert into prodotto values('015','Patatine Surgelate','Orogel','2.50',null,'0.600',null,null,'15','7','3');
+insert into prodotto values('016','Gelato Variegato in vaschetta','Carte D Or','5.00',null,'1.00',null,null,'16','7','3');
+insert into prodotto values('017','Spaghetti N 5','Barilla','1.30',null,'0.500',null,null,'17','8','4');
+insert into prodotto values('018','Riso Oro Classico','Scotti','3.59',null,'1.0',null,null,'18','8','4');
+insert into prodotto values('019','Whiskey','Jack Daniels','25.00',null,'1.0',null,null,'19','9','4');
+insert into prodotto values('020','Birra','Moretti','1.66',null,'0.600',null,null,'20','9','4');
+insert into prodotto values('021','Condimento insalata di riso','Sacla','4.59','2x290 g','0.290',null,null,'21','11','4');
+insert into prodotto values('022','Mais conserva','Bonduelle','1.69',null,'0.300',null,null,'22','11','4');
 
 
 insert into catena values ('1','Esselunga');
