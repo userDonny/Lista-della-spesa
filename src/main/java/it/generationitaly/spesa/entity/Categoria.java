@@ -27,20 +27,6 @@ public class Categoria {
 	private List<Prodotto> prodotti = new ArrayList<Prodotto>();
 
 
-	
-	
-	
-	public Categoria() {
-		super();
-	}
-
-
-	public Categoria(int id, String nome, List<Prodotto> prodotti) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.prodotti = prodotti;
-	}
 
 
 	public int getId() {
