@@ -19,6 +19,7 @@
 			<c:forEach var="prodotto" items="${prodotti}">
 				<tr>
 					<td>${prodotto.nome}</td>
+					
 				</tr>
 			</c:forEach>
 		</tbody>
