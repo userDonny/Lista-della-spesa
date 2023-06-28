@@ -13,12 +13,16 @@
 		<thead>
 			<tr>
 				<th>CATEGORIE</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="categoria" items="${requestScope.categorie}">
 				<tr>
 					<td>${categoria.nome}</td>
+					<td><c:url var="urlProdotti" value="categoria">
+							<c:param name="categoriaId" value="${categoria.id}"></c:param>
+						</c:url><a href="${urlProdotti}">PRODOTTI</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
