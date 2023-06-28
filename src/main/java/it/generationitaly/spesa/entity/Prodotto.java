@@ -44,7 +44,7 @@ public class Prodotto {
 	private Catena catena;
 
 	@OneToOne
-	@JoinColumn(name = "etichetta_id", unique = true, nullable = false)
+	@JoinColumn(name = "etichetta_id",nullable = false)
 	private Etichetta etichetta;
 
 	@ManyToOne
