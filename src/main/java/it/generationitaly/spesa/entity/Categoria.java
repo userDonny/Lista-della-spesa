@@ -1,11 +1,15 @@
 package it.generationitaly.spesa.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
+import it.generationitaly.spesa.entity.Prodotto;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,29 +23,23 @@ public class Categoria {
 	private String nome;
 	
 	
-	@OneToOne(mappedBy = "categoria")
-	private Prodotto prodotto;
+	@OneToMany(mappedBy = "categoria") //, fetch = FetchType.EAGER)
+	private List<Prodotto> prodotti = new ArrayList<Prodotto>();
+
 
 	
 	
-
+	
 	public Categoria() {
 		super();
 	}
 
 
-	public Categoria(int id, String nome) {
+	public Categoria(int id, String nome, List<Prodotto> prodotti) {
 		super();
 		this.id = id;
 		this.nome = nome;
-	}
-
-
-	public Categoria(int id, String nome, Prodotto prodotto) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.prodotto = prodotto;
+		this.prodotti = prodotti;
 	}
 
 
@@ -65,13 +63,13 @@ public class Categoria {
 	}
 
 
-	public Prodotto getProdotto() {
-		return prodotto;
+	public List<Prodotto> getProdotti() {
+		return prodotti;
 	}
 
 
-	public void setProdotto(Prodotto prodotto) {
-		this.prodotto = prodotto;
+	public void setProdotti(List<Prodotto> prodotti) {
+		this.prodotti = prodotti;
 	}
 
 
@@ -79,7 +77,10 @@ public class Categoria {
 	public String toString() {
 		return "Categoria [id=" + id + ", nome=" + nome + "]";
 	}
+
 	
+	
+
 	
 	
 

@@ -43,7 +43,7 @@ public class Prodotto {
 	private Etichetta etichetta;
 	
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn( name = "categoria_id" ,nullable = false)
 	private Categoria categoria;
 
