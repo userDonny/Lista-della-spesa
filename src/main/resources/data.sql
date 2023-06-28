@@ -13,7 +13,6 @@ insert into etichetta values('5','1.9','0.0','0.4','0.0','4.0','1.0','48.0');  -
 insert into etichetta values('6','0.4','45.0','0.1','0.1','0.8','0.1','188.0'); -- marmellata di frutta  
 insert into etichetta values('7','0.0','0.0','0.0','0.0','0.0','0.350','0.0');  -- acqua 
 insert into etichetta values('8','0.3','11.0','0.1','0.0','0.0','0.8','45.0');  -- red bull
-insert into etichetta values('9','3.30','4.90','0.10','0.070','0.0','0.13','143.0');  -- latte
 insert into etichetta values('9','0.0','29.0','32.0','4.0','0.0','1.5','398.0');  -- formaggio
 insert into etichetta values('10','31.0','0.0','3.6','1.0','0.0','0.074','165.0');  -- petto di pollo
 insert into etichetta values('11','22.0','2.4','26.0','9.0','0.0','0.174','336.0');  -- salame 
