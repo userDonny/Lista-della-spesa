@@ -11,23 +11,25 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/save-utente")
+public class SaveUtenteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private UtenteRepository utenteRepository = new UtenteRepositoryImpl();
+	private UtenteRepository ur = new UtenteRepositoryImpl();
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username");
+		String username = request.getParameter("usernameNuovo");
+		Utente utente = ur.findByUsername(username);
+		if(utente == null) {
 		String password = request.getParameter("password");
-		Utente utente = utenteRepository.findByUsername(username);
-		if (utente != null && password.equals(utente.getPassword())) {
-				request.getSession().setAttribute("idUtente", utente.getId());
-				request.getSession().setAttribute("username", utente.getUsername());
-				response.sendRedirect("index.jsp");
+		utente = new Utente();
+		utente.setUsername(username);
+		utente.setPassword(password);
+		ur.save(utente);
+		response.sendRedirect("login.jsp");
 		} else {
-			request.setAttribute("error", true);
-			request.getRequestDispatcher("login.jsp").forward(request, response);;
+			request.setAttribute("errorUser", true);
+			request.getRequestDispatcher("form-crea-account.jsp").forward(request, response);
 		}
 	}
 }
