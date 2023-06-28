@@ -1,0 +1,1 @@
+insert into utente (username, password) values ('demo', 'demo');

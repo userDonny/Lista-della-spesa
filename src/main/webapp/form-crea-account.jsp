@@ -11,13 +11,14 @@
 <link rel = "stylesheet" href="style.css">
 <title>Insert title here</title>
 </head>
-<body>
+<body style = "background-color: rgb(63, 200, 235)">
 	<div class = "container-fluid">
 		<div class = "row">
 			<div class = "mt-2">
 				<a href="login.jsp" class ="btn btn-danger"> INDIETRO </a>
 			</div>
-			<div class = "col-6 mt-3 mx-auto">
+			<div class = "col-4 mt-5 mx-auto" style = "background-color: rgb(252, 156, 45)">
+				<h1 class = "display-4 text-center" style = "font-family: cursive;"> Iscriviti</h1>
 				<form method = "post" action= "save-utente">
 					<div class="mb-3">
 						  <label for="usernameNuovo" class="form-label">USERNAME</label>
