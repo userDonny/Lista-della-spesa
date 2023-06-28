@@ -29,6 +29,7 @@ insert into etichetta values('21','2.9','10.8','1.9','0.5','3.8','0.040','80.0')
 
 
 
+
 insert into categoria values('1','Frutta');
 insert into categoria values('2','Verdura');
 insert into categoria values('3','Acqua e bevande');

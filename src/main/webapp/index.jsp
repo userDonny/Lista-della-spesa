@@ -20,9 +20,10 @@
 			<c:forEach var="categoria" items="${requestScope.categorie}">
 				<tr>
 					<td>${categoria.nome}</td>
-					<td><c:url var="urlProdotti" value="categoria">
-							<c:param name="categoriaId" value="${categoria.id}"></c:param>
-						</c:url><a href="${urlProdotti}">PRODOTTI</a></td>
+					<td><form method="get" action="categoria">
+						<input type = "hidden" name = "categoriaId" value = "${categoria.id}">
+						<button type="submit"> PRODOTTI</button>
+					</form> </td>
 				</tr>
 			</c:forEach>
 		</tbody>

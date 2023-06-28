@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ page isELIgnored="false"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="prodotto" items="${requestScope.prodotti}">
+			<c:forEach var="prodotto" items="${prodotti}">
 				<tr>
 					<td>${prodotto.nome}</td>
 				</tr>

@@ -17,6 +17,9 @@ public class Prodotto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@Column(name = "nome", length = 45)
+	private String nome;
 
 	@Column(name = "marca", length = 45, unique = true, nullable = false)
 	private String marca;
@@ -29,8 +32,10 @@ public class Prodotto {
 
 	@Column(name = "peso", nullable = false)
 	private double peso;
+	
 	@Column(name = "link_foto_detail", length = 4000)
 	private String linkFotoDetail;
+	
 	@Column(name = "link_foto_small", length = 4000)
 	private String linkFotoSmall;
 
@@ -124,6 +129,14 @@ public class Prodotto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	@Override
