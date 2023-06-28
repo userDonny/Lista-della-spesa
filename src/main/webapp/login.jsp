@@ -95,6 +95,7 @@
 <link href="signin.css" rel="stylesheet">
 </head>
 <body class="text-center">
+<a href="prodotti.jsp">prodotti</a>
 	<main class="form-signin w-100 m-auto">
 		<form method="post" action="login">
 			<img class="mb-4"
