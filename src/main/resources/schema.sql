@@ -32,6 +32,8 @@ CREATE TABLE prodotto (
     prezzo DOUBLE NOT NULL CHECK (prezzo > 0),
     descrizione VARCHAR(500),
     peso double not null,
+    link_foto_detail varchar(4000),
+    link_foto_small varchar(4000),
     etichetta_id INT UNIQUE NOT NULL REFERENCES etichetta(id) ON DELETE CASCADE,
     categoria_id INT NOT NULL REFERENCES categoria(id),
     catena_id INT NOT NULL REFERENCES catena(id)
