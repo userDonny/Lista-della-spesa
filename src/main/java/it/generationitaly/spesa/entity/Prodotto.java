@@ -44,7 +44,7 @@ public class Prodotto {
 	
 	
 	@OneToOne
-	@JoinColumn( name = "categoria_id" , unique = true, nullable = false)
+	@JoinColumn( name = "categoria_id" ,nullable = false)
 	private Categoria categoria;
 
 	
