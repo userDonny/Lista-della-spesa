@@ -1,16 +1,12 @@
 package it.generationitaly.spesa.entity;
 
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import it.generationitaly.spesa.entity.Prodotto;
-
-
-
 
 @Entity
 @Table(name = "etichetta")
@@ -18,33 +14,31 @@ public class Etichetta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Column(name = "proteine" , nullable = false )
+
+	@Column(name = "proteine", nullable = false)
 	private double proteine;
-	
-	@Column(name = "carboidrati" , nullable = false )
+
+	@Column(name = "carboidrati", nullable = false)
 	private double carboidrati;
-	
-	@Column(name = "grassi" , nullable = false )
+
+	@Column(name = "grassi", nullable = false)
 	private double grassi;
-	
-	@Column(name = "grassi_saturi" , nullable = false )
+
+	@Column(name = "grassi_saturi", nullable = false)
 	private double grassiSaturi;
-	
-	@Column(name = "fibre" , nullable = false )
+
+	@Column(name = "fibre", nullable = false)
 	private double fibre;
-	
-	@Column(name = "sodio" , nullable = false )
+
+	@Column(name = "sodio", nullable = false)
 	private double sodio;
-	
-	@Column(name = "valore_energetico" , nullable = false )
+
+	@Column(name = "valore_energetico", nullable = false)
 	private double valoreEnergetico;
-	
+
 	@OneToOne(mappedBy = "etichetta")
 	private Prodotto prodotto;
 
-	
-	
 	public int getId() {
 		return id;
 	}
@@ -123,8 +117,5 @@ public class Etichetta {
 				+ ", grassiSaturi=" + grassiSaturi + ", fibre=" + fibre + ", sodio=" + sodio + ", valoreEnergetico="
 				+ valoreEnergetico + "]";
 	}
-	
-	
-	
 
 }
