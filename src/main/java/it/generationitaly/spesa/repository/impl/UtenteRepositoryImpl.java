@@ -9,6 +9,14 @@ import jakarta.persistence.PersistenceException;
 
 public class UtenteRepositoryImpl extends JpaRepositoryImpl<Utente, Integer> implements UtenteRepository{
 	
+	private static UtenteRepositoryImpl instance = new UtenteRepositoryImpl();
+	
+	private UtenteRepositoryImpl () {}
+	
+	public static UtenteRepositoryImpl getInstance () {
+		return instance;
+	}
+	
 	@Override
 	public void deleteByUsername(String username) {
 		EntityTransaction tx = null;

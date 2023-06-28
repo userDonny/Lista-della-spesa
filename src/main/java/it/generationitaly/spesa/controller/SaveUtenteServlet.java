@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class SaveUtenteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private UtenteRepository ur = new UtenteRepositoryImpl();
+	private UtenteRepository ur = UtenteRepositoryImpl.getInstance();
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("usernameNuovo");
