@@ -135,7 +135,7 @@
 	              <p class="card-text">${prodotto.peso} g</p>
 	            </li>
 	           </ul>
-	              <p class="card-text-right"><span style="font-size:30px"><b> /prezzo/ €</b></span></p>
+	              <p class="card-text-right"><span style="font-size:30px"><b></b></span></p>
               <div class="d-flex justify-content-between align-items-center">
                   <a href="#link" class="btn btn-sm btn-outline-secondary" role="button">info</a>
               </div>
