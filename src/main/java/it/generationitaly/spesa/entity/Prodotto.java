@@ -1,5 +1,8 @@
 package it.generationitaly.spesa.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,12 +10,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "prodotto")
-public class Prodotto {
+public class Prodotto extends Prezzo{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,14 +28,8 @@ public class Prodotto {
 	@Column(name = "marca", length = 45, unique = true, nullable = false)
 	private String marca;
 
-	@Column(name = "prezzo", nullable = false)
-	private double prezzo;
-
 	@Column(name = "descrizione", length = 500)
 	private String descrizione;
-	
-	@Column(name = "quantita", nullable = false)
-	private int quantita;
 
 	@Column(name = "peso", nullable = false)
 	private double peso;
@@ -42,9 +40,8 @@ public class Prodotto {
 	@Column(name = "link_foto_small", length = 4000)
 	private String linkFotoSmall;
 
-	@ManyToOne
-	@JoinColumn(name = "catena_id", nullable = false)
-	private Catena catena;
+	@OneToMany(mappedBy = "prodotto")
+	private List<Prezzo> prezzi = new ArrayList<Prezzo>();
 
 	@OneToOne
 	@JoinColumn(name = "etichetta_id", unique = true, nullable = false)
@@ -68,14 +65,6 @@ public class Prodotto {
 
 	public void setMarca(String marca) {
 		this.marca = marca;
-	}
-
-	public double getPrezzo() {
-		return prezzo;
-	}
-
-	public void setPrezzo(double prezzo) {
-		this.prezzo = prezzo;
 	}
 
 	public String getDescrizione() {
@@ -110,14 +99,6 @@ public class Prodotto {
 		this.linkFotoSmall = linkFotoSmall;
 	}
 
-	public Catena getCatena() {
-		return catena;
-	}
-
-	public void setCatena(Catena catena) {
-		this.catena = catena;
-	}
-
 	public Etichetta getEtichetta() {
 		return etichetta;
 	}
@@ -141,19 +122,4 @@ public class Prodotto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public int getQuantita() {
-		return quantita;
-	}
-
-	public void setQuantita(int quantita) {
-		this.quantita = quantita;
-	}
-
-	@Override
-	public String toString() {
-		return "Prodotto [id=" + id + ", marca=" + marca + ", prezzo=" + prezzo + ", descrizione=" + descrizione
-				+ ", peso=" + peso + ", linkFotoDetail=" + linkFotoDetail + ", linkFotoSmall=" + linkFotoSmall + "]";
-	}
-
 }

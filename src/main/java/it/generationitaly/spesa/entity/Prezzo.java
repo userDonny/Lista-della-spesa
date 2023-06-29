@@ -11,17 +11,21 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "prezzo")
-public class Prezzo {
+public abstract class Prezzo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	@Column(name = "prezzo", nullable = false)
 	private double prezzo;
+	
 	@Column(name = "quantita", nullable = false)
 	private int quantita;
+	
 	@ManyToOne
 	@JoinColumn(name = "catena_id", nullable = false, unique = true)
 	private Catena catena;
+	
 	@ManyToOne
 	@JoinColumn(name = "prodotto_id", nullable = false, unique = true)
 	private Prodotto prodotto;
