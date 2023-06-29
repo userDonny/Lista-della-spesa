@@ -20,6 +20,9 @@ public class Categoria {
 
 	@Column(name = "nome", length = 45, unique = true, nullable = false)
 	private String nome;
+	
+	@Column(name = "link_foto", length = 4000)
+	private String linkFoto;
 
 	@OneToMany(mappedBy = "categoria") // , fetch = FetchType.EAGER)
 	private List<Prodotto> prodotti = new ArrayList<Prodotto>();
@@ -47,10 +50,12 @@ public class Categoria {
 	public void setProdotti(List<Prodotto> prodotti) {
 		this.prodotti = prodotti;
 	}
-
-	@Override
-	public String toString() {
-		return "Categoria [id=" + id + ", nome=" + nome + "]";
+	
+	public String getLinkFoto() {
+		return linkFoto;
 	}
 
+	public void setLinkFoto(String linkFoto) {
+		this.linkFoto = linkFoto;
+	}
 }
