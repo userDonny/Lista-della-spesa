@@ -110,7 +110,7 @@
     
   </head>
   <body style="background-image: linear-gradient(to bottom right, #5ac7ed, #ffab38, #6ccdef) !important">
-   <%@ include file="navbar.jsp" %> 
+  <%@ include file = "navbar.jsp" %>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
@@ -129,18 +129,15 @@
             <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">/Immagine Prodotto/</text></svg>
             <div class="card-body">
               <p class="card-text"><b>${prodotto.nome}</b></p>
-              <small class="text-body-secondary">/marca/</small>
+              <small class="text-body-secondary">${prodotto.marca}</small>
               <ul class="list-style">
               	<li>
-	              <p class="card-text">Peso: /peso/ g</p>
-	            </li>
-	            <li>
-	              <p class="card-text">/quantità/</p>
+	              <p class="card-text">${prodotto.peso} g</p>
 	            </li>
 	           </ul>
-	              <p class="card-text-right"><span style="font-size:30px"><b> /prezzo/ €</b></span></p>
+	              <p class="card-text-right"><span style="font-size:30px"><b></b></span></p>
               <div class="d-flex justify-content-between align-items-center">
-                  <a href="#link" class="btn btn-sm btn-outline-secondary" role="button">Valori nutrizionali</a>
+                  <a href="#link" class="btn btn-sm btn-outline-secondary" role="button">info</a>
               </div>
             </div>
             </div>
@@ -164,32 +161,3 @@
 
     </body>
 </html>
-
-<!--  
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-
-	<table>
-		<thead>
-			<tr>
-				<th>NOME</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="prodotto" items="${prodotti}">
-				<tr>
-					<td>${prodotto.nome}</td>
-					
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-</body>
-</html>
--->
