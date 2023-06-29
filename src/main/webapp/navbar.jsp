@@ -1,4 +1,4 @@
-<nav class="navbar bg-dark" style="background-color: #cde9f9 !important" aria-label="First navbar example" >
+<nav class="navbar sticky-top bg-dark" style="background-color: #cde9f9 !important" aria-label="First navbar example" >
     <div class="container-fluid">
     <div>
     <img class="mb-4"
