@@ -16,6 +16,7 @@ CREATE TABLE catena (
 
 CREATE TABLE categoria (
 	id INT PRIMARY KEY AUTO_INCREMENT,
+    link_foto VARCHAR(4000),
 	nome VARCHAR(45) UNIQUE NOT NULL
 );
 
