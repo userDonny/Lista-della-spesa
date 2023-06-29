@@ -10,8 +10,9 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "prezzo")
-public abstract class Prezzo {
+@Table(name = "catena_prodotto")
+public class CatenaProdotto {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -74,5 +75,4 @@ public abstract class Prezzo {
 	public String toString() {
 		return "Prezzo [id=" + id + ", prezzo=" + prezzo + ", quantita=" + quantita + "]";
 	}
-
 }

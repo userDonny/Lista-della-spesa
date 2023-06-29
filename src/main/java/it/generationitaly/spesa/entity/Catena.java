@@ -22,7 +22,7 @@ public class Catena {
 	private String denominazione;
 
 	@OneToMany(mappedBy = "catena")
-	private List<Prezzo> prezzi = new ArrayList<Prezzo>();
+	private List<CatenaProdotto> catenaProdotto = new ArrayList<CatenaProdotto>();
 
 	public int getId() {
 		return id;
@@ -40,17 +40,17 @@ public class Catena {
 		this.denominazione = denominazione;
 	}
 
-	public List<Prezzo> getPrezzi() {
-		return prezzi;
+	public List<CatenaProdotto> getCatenaProdotto() {
+		return catenaProdotto;
 	}
 
-	public void setPrezzi(List<Prezzo> prezzi) {
-		this.prezzi = prezzi;
+	public void setCatenaProdotto(List<CatenaProdotto> catenaProdotto) {
+		this.catenaProdotto = catenaProdotto;
 	}
 
 	@Override
 	public String toString() {
-		return "Catena [id=" + id + ", denominazione=" + denominazione + "]";
+		return "Catena [denominazione=" + denominazione + ", catenaProdotto=" + catenaProdotto + "]";
 	}
 
 }

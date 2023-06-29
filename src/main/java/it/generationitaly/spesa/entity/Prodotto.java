@@ -5,6 +5,7 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,7 +17,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "prodotto")
-public class Prodotto extends Prezzo{
+public class Prodotto{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,8 +41,8 @@ public class Prodotto extends Prezzo{
 	@Column(name = "link_foto_small", length = 4000)
 	private String linkFotoSmall;
 
-	@OneToMany(mappedBy = "prodotto")
-	private List<Prezzo> prezzi = new ArrayList<Prezzo>();
+	@OneToMany(mappedBy = "prodotto", fetch = FetchType.EAGER)
+	private List<CatenaProdotto> catenaProdotto = new ArrayList<CatenaProdotto>();
 
 	@OneToOne
 	@JoinColumn(name = "etichetta_id", unique = true, nullable = false)
@@ -57,6 +58,14 @@ public class Prodotto extends Prezzo{
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getMarca() {
@@ -99,6 +108,14 @@ public class Prodotto extends Prezzo{
 		this.linkFotoSmall = linkFotoSmall;
 	}
 
+	public List<CatenaProdotto> getCatenaProdotto() {
+		return catenaProdotto;
+	}
+
+	public void setCatenaProdotto(List<CatenaProdotto> catenaProdotto) {
+		this.catenaProdotto = catenaProdotto;
+	}
+
 	public Etichetta getEtichetta() {
 		return etichetta;
 	}
@@ -115,11 +132,10 @@ public class Prodotto extends Prezzo{
 		this.categoria = categoria;
 	}
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
+	@Override
+	public String toString() {
+		return "Prodotto [nome=" + nome + ", marca=" + marca + ", descrizione=" + descrizione + ", peso=" + peso
+				+ ", linkFotoDetail=" + linkFotoDetail + ", linkFotoSmall=" + linkFotoSmall + ", catenaProdotto="
+				+ catenaProdotto + ", etichetta=" + etichetta + ", categoria=" + categoria + "]";
 	}
 }
