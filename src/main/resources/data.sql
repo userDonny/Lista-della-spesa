@@ -41,10 +41,10 @@ INSERT INTO catena_prodotto VALUES ('33','1.55',default,'1','009');
 INSERT INTO catena_prodotto VALUES ('34','1.99',default,'2','009');
 INSERT INTO catena_prodotto VALUES ('35','1.89',default,'3','009');
 INSERT INTO catena_prodotto VALUES ('36','2.10',default,'4','009');
-INSERT INTO catena_prodotto VALUES ('33','1.55',default,'1','010');
-INSERT INTO catena_prodotto VALUES ('34','1.99',default,'2','010');
-INSERT INTO catena_prodotto VALUES ('35','1.89',default,'3','010');
-INSERT INTO catena_prodotto VALUES ('36','2.10',default,'4','010');
+INSERT INTO catena_prodotto VALUES ('37','5.50',default,'1','010');
+INSERT INTO catena_prodotto VALUES ('38','5.99',default,'2','010');
+INSERT INTO catena_prodotto VALUES ('39','5.00',default,'3','010');
+INSERT INTO catena_prodotto VALUES ('40','5.39',default,'4','010');
 
 
 -- insert di prodotto pressochè concluse manca solo da definire descrizione di ogni prodotto(4' campo attualmente null)
