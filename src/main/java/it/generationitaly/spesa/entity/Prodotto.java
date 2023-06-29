@@ -27,8 +27,11 @@ public class Prodotto {
 	@Column(name = "prezzo", nullable = false)
 	private double prezzo;
 
-	@Column(name = "descrizione", length = 500, nullable = true)
+	@Column(name = "descrizione", length = 500)
 	private String descrizione;
+	
+	@Column(name = "quantita", nullable = false)
+	private int quantita;
 
 	@Column(name = "peso", nullable = false)
 	private double peso;
@@ -137,6 +140,14 @@ public class Prodotto {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public int getQuantita() {
+		return quantita;
+	}
+
+	public void setQuantita(int quantita) {
+		this.quantita = quantita;
 	}
 
 	@Override
