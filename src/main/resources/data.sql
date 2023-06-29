@@ -4,19 +4,47 @@ insert into catena values ('3','Pam');
 insert into catena values ('4','Coop');
 
 
- -- insert di prezzo da concludere (sarebbero 4(riferito a catene) prezzi per prodotto )
-INSERT INTO prezzo VALUES ('1','0.99',default,'1','001');
-INSERT INTO prezzo VALUES ('2','0.80',default,'2','001');
-INSERT INTO prezzo VALUES ('3','0.88',default,'3','001');
-INSERT INTO prezzo VALUES ('4','0.85',default,'4','001');
-INSERT INTO prezzo VALUES ('5','1.60',default,'1','002');
-INSERT INTO prezzo VALUES ('6','2.20',default,'2','002');
-INSERT INTO prezzo VALUES ('7','1.85',default,'3','002');
-INSERT INTO prezzo VALUES ('8','2.00',default,'4','002');
-INSERT INTO prezzo VALUES ('9','6.99',default,'1','003');
-INSERT INTO prezzo VALUES ('10','6.60',default,'2','003');
-INSERT INTO prezzo VALUES ('11','6.66',default,'3','003');
-INSERT INTO prezzo VALUES ('12','5.99',default,'4','003');  
+ -- insert di catena_prodotto da concludere (sarebbero 4(riferito a catene) prezzi per prodotto )
+INSERT INTO catena_prodotto VALUES ('1','0.99',default,'1','001');
+INSERT INTO catena_prodotto VALUES ('2','0.80',default,'2','001');
+INSERT INTO catena_prodotto VALUES ('3','0.88',default,'3','001');
+INSERT INTO catena_prodotto VALUES ('4','0.85',default,'4','001');
+INSERT INTO catena_prodotto VALUES ('5','1.60',default,'1','002');
+INSERT INTO catena_prodotto VALUES ('6','2.20',default,'2','002');
+INSERT INTO catena_prodotto VALUES ('7','1.85',default,'3','002');
+INSERT INTO catena_prodotto VALUES ('8','2.00',default,'4','002');
+INSERT INTO catena_prodotto VALUES ('9','6.99',default,'1','003');
+INSERT INTO catena_prodotto VALUES ('10','6.60',default,'2','003');
+INSERT INTO catena_prodotto VALUES ('11','6.66',default,'3','003');
+INSERT INTO catena_prodotto VALUES ('12','5.99',default,'4','003');
+INSERT INTO catena_prodotto VALUES ('13','2.19',default,'1','004');
+INSERT INTO catena_prodotto VALUES ('14','1.99',default,'2','004');
+INSERT INTO catena_prodotto VALUES ('15','2.15',default,'3','004');
+INSERT INTO catena_prodotto VALUES ('16','2.05',default,'4','004');
+INSERT INTO catena_prodotto VALUES ('17','2.00',default,'1','005');
+INSERT INTO catena_prodotto VALUES ('18','1.98',default,'2','005');
+INSERT INTO catena_prodotto VALUES ('19','2.20',default,'3','005');
+INSERT INTO catena_prodotto VALUES ('20','1.80',default,'4','005');
+INSERT INTO catena_prodotto VALUES ('21','2.00',default,'1','006');
+INSERT INTO catena_prodotto VALUES ('22','2.20',default,'2','006');
+INSERT INTO catena_prodotto VALUES ('23','2.15',default,'3','006');
+INSERT INTO catena_prodotto VALUES ('24','2.05',default,'4','006');
+INSERT INTO catena_prodotto VALUES ('25','1.50',default,'1','007');
+INSERT INTO catena_prodotto VALUES ('26','1.65',default,'2','007');
+INSERT INTO catena_prodotto VALUES ('27','1.99',default,'3','007');
+INSERT INTO catena_prodotto VALUES ('28','1.70',default,'4','007');
+INSERT INTO catena_prodotto VALUES ('29','1.35',default,'1','008');
+INSERT INTO catena_prodotto VALUES ('30','1.65',default,'2','008');
+INSERT INTO catena_prodotto VALUES ('31','1.99',default,'3','008');
+INSERT INTO catena_prodotto VALUES ('32','1.50',default,'4','008');
+INSERT INTO catena_prodotto VALUES ('33','1.55',default,'1','009');
+INSERT INTO catena_prodotto VALUES ('34','1.99',default,'2','009');
+INSERT INTO catena_prodotto VALUES ('35','1.89',default,'3','009');
+INSERT INTO catena_prodotto VALUES ('36','2.10',default,'4','009');
+INSERT INTO catena_prodotto VALUES ('33','1.55',default,'1','010');
+INSERT INTO catena_prodotto VALUES ('34','1.99',default,'2','010');
+INSERT INTO catena_prodotto VALUES ('35','1.89',default,'3','010');
+INSERT INTO catena_prodotto VALUES ('36','2.10',default,'4','010');
 
 
 
@@ -48,17 +76,17 @@ insert into prodotto values('022','Mais conserva','Bonduelle',null,'0.300',null,
 
 
 
-insert into categoria values('1','Frutta');
-insert into categoria values('2','Verdura');
-insert into categoria values('3','Acqua e bevande');
-insert into categoria values('4','Latte e derivati');
-insert into categoria values('5','Carne e salumi');
-insert into categoria values('6','Pesce');
-insert into categoria values('7','Surgelati e gelati');
-insert into categoria values('8','Pasta e riso');
-insert into categoria values('9','Vino, birra e liquori');
-insert into categoria values('10','Dolci');
-insert into categoria values('11','Conserve e condimenti');
+insert into categoria values('1',null,'Frutta');
+insert into categoria values('2',null,'Verdura');
+insert into categoria values('3',null,'Acqua e bevande');
+insert into categoria values('4',null,'Latte e derivati');
+insert into categoria values('5',null,'Carne e salumi');
+insert into categoria values('6',null,'Pesce');
+insert into categoria values('7',null,'Surgelati e gelati');
+insert into categoria values('8',null,'Pasta e riso');
+insert into categoria values('9',null,'Vino, birra e liquori');
+insert into categoria values('10',null,'Dolci');
+insert into categoria values('11',null,'Conserve e condimenti');
 
 
 
@@ -93,6 +121,6 @@ insert into etichetta values('22','2.9','10.8','1.9','0.5','3.8','0.040','80.0')
 
 
 
-INSERT INTO utente VALUES('1','admin','pass');
-INSERT INTO utente VALUES('2','demo','demo');
-INSERT INTO utente VALUES('3','test','test');
+INSERT INTO utente VALUES('1','admin','pass','mario.rossi@gmail.com','Mario','Rossi','1998-07-09','M');
+INSERT INTO utente VALUES('2','demo','demo','luigi.neri@gmail.com','Luigi','Neri','2002-08-10','M');
+INSERT INTO utente VALUES('3','test','test','marta.verdi@gmail.com','Marta','Verdi','2003-02-03','F');
