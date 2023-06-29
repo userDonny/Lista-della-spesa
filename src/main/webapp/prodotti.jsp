@@ -135,7 +135,7 @@
 	              <p class="card-text">${prodotto.peso} g</p>
 	            </li>
 	           </ul>
-	              <p class="card-text-right"><span style="font-size:30px"><b> /prezzo/ €</b></span></p>
+	              <p class="card-text-right"><span style="font-size:30px"><b></b></span></p>
               <div class="d-flex justify-content-between align-items-center">
                   <a href="#link" class="btn btn-sm btn-outline-secondary" role="button">info</a>
               </div>
@@ -161,32 +161,3 @@
 
     </body>
 </html>
-
-<!--  
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-
-	<table>
-		<thead>
-			<tr>
-				<th>NOME</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="prodotto" items="${prodotti}">
-				<tr>
-					<td>${prodotto.nome}</td>
-					
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-</body>
-</html>
--->
