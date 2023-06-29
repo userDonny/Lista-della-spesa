@@ -35,9 +35,6 @@
               <li><a class="dropdown-item" href="#">Conserve e condimenti</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
         </ul>
         <form role="search">
           <input class="form-control" type="search" placeholder="Search" aria-label="Search">
