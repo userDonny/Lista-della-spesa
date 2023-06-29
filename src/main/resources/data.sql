@@ -119,7 +119,6 @@ insert into etichetta values('22','2.9','10.8','1.9','0.5','3.8','0.040','80.0')
 
 
 
-
-INSERT INTO utente VALUES('1','admin','pass');
-INSERT INTO utente VALUES('2','demo','demo');
-INSERT INTO utente VALUES('3','test','test');
+INSERT INTO utente VALUES('1','admin','pass','mario.rossi@gmail.com','Mario','Rossi','1998-07-09','M');
+INSERT INTO utente VALUES('2','demo','demo','luigi.neri@gmail.com','Luigi','Neri','2002-08-10','M');
+INSERT INTO utente VALUES('3','test','test','marta.verdi@gmail.com','Marta','Verdi','2003-02-03','F');
