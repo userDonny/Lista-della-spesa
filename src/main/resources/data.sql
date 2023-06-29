@@ -48,17 +48,17 @@ insert into prodotto values('022','Mais conserva','Bonduelle',null,'0.300',null,
 
 
 
-insert into categoria values('1','Frutta');
-insert into categoria values('2','Verdura');
-insert into categoria values('3','Acqua e bevande');
-insert into categoria values('4','Latte e derivati');
-insert into categoria values('5','Carne e salumi');
-insert into categoria values('6','Pesce');
-insert into categoria values('7','Surgelati e gelati');
-insert into categoria values('8','Pasta e riso');
-insert into categoria values('9','Vino, birra e liquori');
-insert into categoria values('10','Dolci');
-insert into categoria values('11','Conserve e condimenti');
+insert into categoria values('1','https://l1nq.com/yT2QO','Frutta');
+insert into categoria values('2','https://l1nq.com/yT2QO','Verdura');
+insert into categoria values('3','https://encr.pw/aPAFW','Acqua e bevande');
+insert into categoria values('4','https://encr.pw/SHQYq','Latte e derivati');
+insert into categoria values('5','https://l1nq.com/ZqMo3','Carne e salumi');
+insert into categoria values('6','https://encr.pw/37MQB','Pesce');
+insert into categoria values('7','https://encr.pw/7zuRV','Surgelati e gelati');
+insert into categoria values('8','https://l1nq.com/rvUjd','Pasta e riso');
+insert into categoria values('9','https://l1nq.com/gD5C8','Vino, birra e liquori');
+insert into categoria values('10','https://encr.pw/AWpWw','Dolci');
+insert into categoria values('11','https://encr.pw/aMYc2','Conserve e condimenti');
 
 
 
