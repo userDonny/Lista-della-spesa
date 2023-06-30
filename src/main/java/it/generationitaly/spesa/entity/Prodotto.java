@@ -41,7 +41,7 @@ public class Prodotto{
 	@Column(name = "link_foto_small", length = 4000)
 	private String linkFotoSmall;
 
-	@OneToMany(mappedBy = "prodotto", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "prodotto")
 	private List<CatenaProdotto> catenaProdotto = new ArrayList<CatenaProdotto>();
 
 	@OneToOne

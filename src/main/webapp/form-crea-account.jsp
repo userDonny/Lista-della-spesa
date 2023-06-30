@@ -125,11 +125,12 @@
 				<input type="password" class="form-control" id="floatingPassword" name="password"
 					placeholder="Password" required><label for="floatingPassword">Password</label>
 			</div>
-			<div class="form-check">
+			<p class = "text-start">Sesso</p>
+			<div class="form-check text-start">
 				<input class="form-check-input" type="radio" name="sesso" id="sesso1" value="M" required>
 					<label class="form-check-label" for="sesso1"> M</label>
 			</div>
-			<div class="form-check">
+			<div class="form-check text-start">
 				<input class="form-check-input" type="radio" name="sesso" id="sesso2" value="F">
 					<label class="form-check-label" for="sesso2"> F </label>
 			</div>
