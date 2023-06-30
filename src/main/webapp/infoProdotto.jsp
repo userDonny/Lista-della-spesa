@@ -16,7 +16,7 @@
 	<div class="text-center container">
 		<div class="row">
 			<div class="col-lg-6 col-md-8 mx-auto">
-			<img src="${prodotto.linkFotoDetail}" class="img-fluid">
+			<img src="${prodotto.linkFotoSmall}" class="img-fluid mb-3">
 			</div>
 		</div>
 		<div class="row">
@@ -65,7 +65,7 @@
 								<tbody>
 									<c:forEach var = "prezzoQuantita" items = "${prodotto.catenaProdotto}">
 										<tr>
-											<td>${prezzoQuantita.prezzo}</td>
+											<td>${prezzoQuantita.prezzo} €</td>
 											<td>${prezzoQuantita.quantita}</td>
 										</tr>
 									</c:forEach>
