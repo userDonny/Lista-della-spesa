@@ -1,5 +1,4 @@
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <%@ page isELIgnored="false"%>
@@ -139,7 +138,6 @@
 	<div class="album py-5 bg-body-tertiary">
 		<div class="container">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-				<!--  	<c:forEach var="prodotto" items="${prodotti}"> -->
 				<div class="col">
 					<div class="card shadow-sm">
 						<svg class="bd-placeholder-img card-img-top" width="100%"
@@ -187,20 +185,16 @@
 						<div>
 							<table>
 								<tbody>
-									<tr>
-										<th>PREZZO</th>
-										<td>${prodotto.catenaProdotto.prezzo}&euro</td>
-									</tr>
-									<tr>
-										<th>QUANTITA'</th>
-										<td>${prodotto.catenaProdotto.quantita}KG / L</td>
-									</tr>
-
+									<c:forEach var = "prezzoQuantita" items = "${prodotto.catenaProdotto}">
+										<tr>
+											<td>${prezzoQuantita.prezzo}</td>
+										</tr>
+										<tr>
+											<td>${prezzoQuantita.quantita}</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
-
-
-
 						</div>
 
 					</div>

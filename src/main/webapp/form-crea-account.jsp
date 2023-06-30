@@ -103,30 +103,30 @@
 			<h1 class="h3 mb-3 fw-normal">Iscriviti</h1>
 			<div class="form-floating">
 				<input type="text" class="form-control" id="nome" name="nome"
-					placeholder="Nome"><label for="nome">Nome</label>
+					placeholder="Nome" required><label for="nome">Nome</label>
 			</div>
 			<div class="form-floating">
 				<input type="text" class="form-control" id="cognome" name="cognome"
-					placeholder="Cognome"><label for="cognome">Cognome</label>
+					placeholder="Cognome" required><label for="cognome">Cognome</label>
 			</div>
 			<div class="form-floating">
-				<input type="text" class="form-control" id="email" name="email"
-					placeholder="Email"><label for="email">Email</label>
+				<input type="email" class="form-control" id="email" name="email"
+					placeholder="Email" required><label for="email">Email</label>
 			</div>
 			<div class="form-floating">
 				<input type="date" class="form-control" id="data" name="data"
-					placeholder="DataNascita"><label for="data">Data Nascita</label>
+					placeholder="DataNascita" required><label for="data">Data Nascita</label>
 			</div>
 			<div class="form-floating">
 				<input type="text" class="form-control" id="usernameNuovo" name="usernameNuovo"
-					placeholder="Username"><label for="usernameNuovo">Username</label>
+					placeholder="Username" required><label for="usernameNuovo">Username</label>
 			</div>
 			<div class="form-floating">
 				<input type="password" class="form-control" id="floatingPassword" name="password"
-					placeholder="Password"><label for="floatingPassword">Password</label>
+					placeholder="Password" required><label for="floatingPassword">Password</label>
 			</div>
 			<div class="form-check">
-				<input class="form-check-input" type="radio" name="sesso" id="sesso1" value="M">
+				<input class="form-check-input" type="radio" name="sesso" id="sesso1" value="M" required>
 					<label class="form-check-label" for="sesso1"> M</label>
 			</div>
 			<div class="form-check">
