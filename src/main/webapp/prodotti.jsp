@@ -137,7 +137,13 @@
 	           </ul>
 	              <p class="card-text-right"><span style="font-size:30px"><b></b></span></p>
               <div class="d-flex justify-content-between align-items-center">
-                  <a href="#link" class="btn btn-sm btn-outline-secondary" role="button">info</a>
+             <!--     <a href="#link" class="btn btn-sm btn-outline-secondary" role="button">info</a>  --> 
+                  <form action="prodotto" method="get">
+						<input type="hidden" name="id"
+							value="${prodotto.id }">
+						<button class="btn btn-sm btn-outline-secondary" type="submit">Info
+							</button>
+					</form>
               </div>
             </div>
             </div>
