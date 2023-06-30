@@ -1,12 +1,12 @@
 CREATE TABLE utente (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	username VARCHAR(45) UNIQUE NOT NULL,
-	password VARCHAR(45) NOT NULL,
-    email VARCHAR(45) NOT NULL,
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(45) UNIQUE NOT NULL,
+    password VARCHAR(45) NOT NULL,
+    email VARCHAR(45) UNIQUE NOT NULL,
     nome VARCHAR(45) NOT NULL,
     cognome VARCHAR(45) NOT NULL,
     data_nascita DATE NOT NULL,
-    sesso CHAR(1) NOT NULL
+    sesso CHAR(1) NOT NULL CHECK (sesso = 'M' OR sesso = 'F')
 );
 
 CREATE TABLE catena (

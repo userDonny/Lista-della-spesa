@@ -1,11 +1,14 @@
 package it.generationitaly.spesa.entity;
 
+import java.util.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "utente")
@@ -20,6 +23,22 @@ public class Utente {
 
 	@Column(name = "password", length = 45, nullable = false)
 	private String password;
+	
+	@Column(name = "email", length = 45, unique = true, nullable = false)
+	private String email;
+	
+	@Column(name = "nome", length = 45, nullable = false)
+	private String nome;
+	
+	@Column(name = "cognome", length = 45, nullable = false)
+	private String cognome;
+	
+	@Column(name = "sesso", length = 1, nullable = false)
+	private char sesso;
+	
+	@Temporal(TemporalType.DATE)
+	@Column (name = "data_nascita", nullable = false)
+	private Date dataNascita;
 
 	public int getId() {
 		return id;
@@ -45,9 +64,49 @@ public class Utente {
 		this.password = password;
 	}
 
-	@Override
-	public String toString() {
-		return "Utente [id=" + id + ", username=" + username + ", password=" + password + "]";
+	public String getEmail() {
+		return email;
 	}
 
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public char getSesso() {
+		return sesso;
+	}
+
+	public void setSesso(char sesso) {
+		this.sesso = sesso;
+	}
+
+	public Date getDataNascita() {
+		return dataNascita;
+	}
+
+	public void setDataNascita(Date dataNascita) {
+		this.dataNascita = dataNascita;
+	}
+
+	@Override
+	public String toString() {
+		return "Utente [username=" + username + ", password=" + password + ", email=" + email + ", nome=" + nome
+				+ ", cognome=" + cognome + ", sesso=" + sesso + ", dataNascita=" + dataNascita + "]";
+	}
 }

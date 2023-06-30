@@ -62,4 +62,29 @@ public class UtenteRepositoryImpl extends JpaRepositoryImpl<Utente, Integer> imp
 		}
 		return utente;
 	}
+	
+	@Override
+	public Utente findByUsernameOrEmail(String username, String email) {
+		Utente utente = null;
+		EntityTransaction tx = null;
+		EntityManager em = null;
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			List<Utente> utenti = em.createQuery("SELECT u FROM Utente u WHERE u.username =: username OR u.email =: email", clazz).setParameter("username", username).setParameter("email", email).getResultList();
+			if(!utenti.isEmpty()) {
+				utente = utenti.get(0);
+			}
+			tx.commit();	
+		} catch (PersistenceException e) {
+			System.err.println(e.getMessage());
+			if(tx != null && tx.isActive())
+				tx.rollback();
+		} finally {
+			if(em != null)
+				em.close();
+		}
+		return utente;
+	}
 }
