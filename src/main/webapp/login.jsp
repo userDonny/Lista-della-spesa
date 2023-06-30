@@ -109,8 +109,7 @@
 				<input type="password" class="form-control" id="floatingPassword" name="password"
 					placeholder="Password"><label for="floatingPassword">Password</label>
 			</div>
-			<button class="w-100 btn btn-lg btn-primary" type="submit">Sign
-				in</button>
+			<button class="w-100 btn btn-lg btn-primary" type="submit"> Accedi</button>
 		</form>
 		<c:if test="${error != null}">
 			 <div class="alert alert-danger" role="alert">

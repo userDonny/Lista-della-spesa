@@ -125,7 +125,7 @@
 				<input type="password" class="form-control" id="floatingPassword" name="password"
 					placeholder="Password" required><label for="floatingPassword">Password</label>
 			</div>
-			<p class = "text-start">Sesso</p>
+			<div class = "text-start">Sesso:</div>
 			<div class="form-check text-start">
 				<input class="form-check-input" type="radio" name="sesso" id="sesso1" value="M" required>
 					<label class="form-check-label" for="sesso1"> M</label>
