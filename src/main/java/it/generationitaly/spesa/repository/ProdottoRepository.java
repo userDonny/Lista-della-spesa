@@ -8,4 +8,5 @@ public interface ProdottoRepository extends JpaRepository<Prodotto, Integer> {
 
 	List<Prodotto> prodottoJoinFetchCategoria(int id);
 	Prodotto prodottoJoinCatenaProdottoJoinEtichetta(int id);
+	Prodotto findByNome(String nome);
 }

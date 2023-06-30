@@ -42,7 +42,7 @@ public class ProdottoRepositoryImpl extends JpaRepositoryImpl<Prodotto, Integer>
 		}
 		return prodotti;
 	}
-	
+
 	@Override
 	public Prodotto prodottoJoinCatenaProdottoJoinEtichetta(int id) {
 		Prodotto prodotto = null;
@@ -52,7 +52,9 @@ public class ProdottoRepositoryImpl extends JpaRepositoryImpl<Prodotto, Integer>
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			prodotto = em.createQuery("SELECT p FROM Prodotto p JOIN FETCH p.catenaProdotto d JOIN FETCH p.etichetta e WHERE p.id =: id", Prodotto.class).setParameter("id", id).getSingleResult();
+			prodotto = em.createQuery(
+					"SELECT p FROM Prodotto p JOIN FETCH p.catenaProdotto d JOIN FETCH p.etichetta e WHERE p.id =: id",
+					Prodotto.class).setParameter("id", id).getSingleResult();
 			tx.commit();
 		} catch (PersistenceException e) {
 			System.err.println(e.getMessage());
@@ -64,4 +66,29 @@ public class ProdottoRepositoryImpl extends JpaRepositoryImpl<Prodotto, Integer>
 		}
 		return prodotto;
 	}
+
+	@Override
+	public Prodotto findByNome(String nome) {
+		Prodotto prodotto = null;
+		EntityTransaction tx = null;
+		EntityManager em = null;
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+	prodotto = em.createQuery("SELECT p FROM Prodotto p WHERE p.nome =: nome", Prodotto.class).setParameter("nome", nome).getSingleResult();
+			tx.commit();
+		} catch (PersistenceException e) {
+			System.err.println(e.getMessage());
+			if (tx != null && tx.isActive())
+				tx.rollback();
+		} finally {
+			if (em != null)
+				em.close();
+		}
+		return prodotto;
+	}
+	
 }
+
+
