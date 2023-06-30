@@ -48,17 +48,17 @@ INSERT INTO catena_prodotto VALUES ('40','5.39',default,'4','010');
 
 
 -- insert di prodotto pressochè concluse manca solo da definire descrizione di ogni prodotto(4' campo attualmente null)
-insert into prodotto values('001','Limoni','Monachello',null,'1.0',null,'https://shorturl.at/anuxF','3','2');
-insert into prodotto values('002','Mele Golden','Melinda',null,'1.0',null,'https://shorturl.at/bksM9','2','1');
-insert into prodotto values('003','Nutella','Ferrero',null,'1.0',null,'https://shorturl.at/efiv4','1','10');
-insert into prodotto values('004','Albicocche','Valfrutta',null,'1.0',null,'https://shorturl.at/inuCU','4','1');
-insert into prodotto values('005','Pomodori','Cirio',null,'1.0',null,'https://shorturl.at/bkqTZ','5','2');
-insert into prodotto values('006','Marmellata ai frutti di bosco','Zuegg',null,'0.500',null,'https://shorturl.at/HVY38','6','10');
-insert into prodotto values('007',' Acqua Naturale','Levissima','quantita 6x1.5','1.5',null,'https://shorturl.at/ckxQ6','7','3');
-insert into prodotto values('008','Energy Drink','RED BULL',' lattina da 250 ml','0.250',null,'https://shorturl.at/sIQRT','8','3');
-insert into prodotto values('009','Latte Intero UHT','Parmalat',null,'1.0',null,'https://shorturl.at/oCQVX','9','4');
-insert into prodotto values('010','Formaggio','Grana Padano DOP',null,'0.400',null,'https://shorturl.at/gjrFT','10','4');
-insert into prodotto values('011','Petto di Pollo','AIA',null,'1.0',null,'https://shorturl.at/qERX0','11','5');
+insert into prodotto values('001','Limoni','Monachello',null,'1.0','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw181c2326/large/LIMONIGR500-8034076480130-1.jpg','https://shorturl.at/anuxF','3','2');
+insert into prodotto values('002','Mele Golden','Melinda',null,'1.0','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw48ba7080/large/MeleGolden900g-8004381107008-1.jpg','https://shorturl.at/bksM9','2','1');
+insert into prodotto values('003','Nutella','Ferrero',null,'1.0','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw8dfcdf17/large/NUTELLAVASETTOGR450-0000080050865-1.png','https://shorturl.at/efiv4','1','10');
+insert into prodotto values('004','Albicocche','Valfrutta',null,'1.0','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw855b9649/large/AlbicocchesfusecatIorigineSpagna-2002152000000-1.jpg','https://shorturl.at/inuCU','4','1');
+insert into prodotto values('005','Pomodori','Cirio',null,'1.0','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw461cfbd1/large/POMODDATTERINOCONVGR200-8053013490063-1.jpg','https://shorturl.at/bkqTZ','5','2');
+insert into prodotto values('006','Marmellata ai frutti di bosco','Zuegg',null,'0.500','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw5eb7e83d/large/CONFETTURAFRUTTIBOSCOZUEGG-0000080298410-1.png','https://shorturl.at/HVY38','6','10');
+insert into prodotto values('007',' Acqua Naturale','Levissima','quantita 6x1.5','1.5','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw3bca92be/large/LEVISSIMANATURALELT15X6-8001050009502-1.png','https://shorturl.at/ckxQ6','7','3');
+insert into prodotto values('008','Energy Drink','RED BULL',' lattina da 250 ml','0.250','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dwdc2673cb/large/REDBULLENERGYDRINK-9002490100070-1.png','https://shorturl.at/sIQRT','8','3');
+insert into prodotto values('009','Latte Intero UHT','Parmalat',null,'1.0','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw7787a907/large/LATTEUHTINTBOTITALPARML1-8002580018446-1.png','https://shorturl.at/oCQVX','9','4');
+insert into prodotto values('010','Formaggio','Grana Padano DOP',null,'0.400','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw9bef6be9/large/granash.jpg','https://shorturl.at/gjrFT','10','4');
+insert into prodotto values('011','Petto di Pollo','AIA',null,'1.0','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw98a47ac3/large/1538796Pettopollo1000GATM.jpg','https://shorturl.at/qERX0','11','5');
 insert into prodotto values('012','Salame Milano Affettato','Rovagnati',null,'0.250',null,null,'12','5');
 insert into prodotto values('013','Salmone Norvegese Trancio','Norvegia',null,'0.200',null,null,'13','6');
 insert into prodotto values('014','Tonno Pinna Gialla Filetto','Rio Mare',null,'0.250',null,null,'14','6');
