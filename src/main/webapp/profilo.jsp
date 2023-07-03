@@ -9,22 +9,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:set var="utente" value="${requestScope.profilo}"></c:set>
 <table>
 <tbody>
 <tr>
 <th>NOME</th>
-<td>"${utente.nome}"</td>
+<td>${utente.nome}</td>
 <th>COGNOME</th>
-<td>"${utente.cognome}"</td>
+<td>${utente.cognome}</td>
 <th>USERNAME</th>
-<td>"${utente.username}"</td>
+<td>${utente.username}</td>
 <th>EMAIL</th>
-<td>"${utente.email}"</td>
+<td>${utente.email}</td>
 <th>DATA DI NASCITA</th>
-<td>"${utente.dataNascita}"</td>
+<td>${utente.dataNascita}</td>
 <th>SESSO</th>
-<td>"${utente.sesso}"</td>
+<td>${utente.sesso}</td>
 </tr>
 </tbody>
 </table>
