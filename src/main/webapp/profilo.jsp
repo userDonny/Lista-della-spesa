@@ -13,19 +13,32 @@
 <tbody>
 <tr>
 <th>NOME</th>
-<td>${utente.nome}</td>
+<td>${profilo.nome}</td>
+</tr>
+<tr>
 <th>COGNOME</th>
-<td>${utente.cognome}</td>
+<td>${profilo.cognome}</td>
+</tr>
+<tr>
 <th>USERNAME</th>
-<td>${utente.username}</td>
+<td>${profilo.username}</td>
+</tr>
+<tr>
 <th>EMAIL</th>
-<td>${utente.email}</td>
+<td>${profilo.email}</td>
+</tr>
+<tr>
 <th>DATA DI NASCITA</th>
-<td>${utente.dataNascita}</td>
+<td>${profilo.dataNascita}</td>
+</tr>
+<tr>
 <th>SESSO</th>
-<td>${utente.sesso}</td>
+<td>${profilo.sesso}</td>
 </tr>
 </tbody>
 </table>
+	<form action="profilo" method="post">
+		<input type="submit" class="btn btn-primary" value="MODIFICA">
+	</form>
 </body>
 </html>

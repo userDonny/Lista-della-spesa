@@ -9,29 +9,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:set var="utente" value="${requestScope.profilo}"></c:set>
 	<form action="profilo" method="post">
 	<label for="nome">NOME</label>
-	<input type="text" id="nome" name="nome" placeholder="${utente.nome}"
+	<input type="text" id="nome" name="nome" placeholder="${profilo.nome}"
 		readonly="readonly">
 	<label for="cognome">COGNOME</label>
 	<input type="text" id="cognome" name="cognome"
-		placeholder="${utente.cognome}" readonly="readonly">
+		placeholder="${profilo.cognome}" readonly="readonly">
 		<label for="dataNascita">DATA NASCITA</label>
 	<input type="date" id="dataNascita" name="data"
-		placeholder="${utente.dataNascita}" readonly="readonly">
+		placeholder="${profilo.dataNascita}" readonly="readonly">
 		<label for="sesso">SESSO</label>
 	<input type="checkbox" id="sesso" name="sesso"
-		placeholder="${utente.sesso}" readonly="readonly">
+		placeholder="${profilo.sesso}" readonly="readonly">
 	<label for="email">E-MAIL</label>
 	<input type="email" id="email" name="username"
 		value=>
 	<label for="username">USERNAME</label>
 	<input type="text" id="username" name="username"
-		value="${utente.username}">
+		value="${profilo.username}">
 	<label for="password">PASSWORD</label>
 	<input type="password" id="password" name="password"
-		value="${utente.username}">
+		value="${profilo.username}">
 		<button type="button" >SALVA</button>
 		</form>
 </body>

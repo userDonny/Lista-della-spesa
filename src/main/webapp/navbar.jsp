@@ -30,7 +30,7 @@
 			</svg>
           </a>
           <ul class="dropdown-menu text-small" style="">
-            <li><a class="dropdown-item" href="#">Profilo</a></li>
+            <li> <a class="dropdown-item" href="profilo">Profilo</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><form method="post" action="logout"><input class="dropdown-item" value="Logout" type="submit" ></form></li>
           </ul>
