@@ -20,7 +20,7 @@
 	<input type="date" id="dataNascita" name="dataNascita"
 		placeholder="${profilo.dataNascita}" readonly="readonly">
 		<label for="sesso">SESSO</label>
-	<input type="checkbox" id="sesso" name="sesso"
+	<input type="text" id="sesso" name="sesso"
 		placeholder="${profilo.sesso}" readonly="readonly">
 	<label for="email">E-MAIL</label>
 	<input type="email" id="email" name="email"
