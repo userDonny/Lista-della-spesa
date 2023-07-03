@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/profiloUpdate")
-public class ProdottoUpdateServlet extends HttpServlet {
+public class ProfiloUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UtenteRepository ur = UtenteRepositoryImpl.getInstance();
 
@@ -27,26 +27,12 @@ public class ProdottoUpdateServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
-		String nome = request.getParameter("nome");
-		String cognome = request.getParameter("cognome");
-		// SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		// Date data = new Date();
-		// try {
-		// data = formatter.parse(request.getParameter("data"));
-		// } catch (ParseException e) {
-		// e.printStackTrace();
-		// }
-
-		char sesso = request.getParameter("sesso").charAt(0);
+	
 		Utente utente = ur.findById(id);
 
 		utente.setUsername(username);
 		utente.setPassword(password);
 		utente.setEmail(email);
-		utente.setNome(nome);
-		utente.setCognome(cognome);
-//		utente.setDataNascita(data);
-		utente.setSesso(sesso);
 
 		ur.update(utente);
 		response.sendRedirect("profilo");

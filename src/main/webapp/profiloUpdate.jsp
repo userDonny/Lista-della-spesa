@@ -39,7 +39,7 @@
 					<input type="password" id="password" name="password"
 						value="${profilo.password}" class="form-control">
 					
-					<button type="button">SALVA MODIFICHE</button>
+					<button type="submit">SALVA MODIFICHE</button>
 				</form>
 			</div>
 		</div>
