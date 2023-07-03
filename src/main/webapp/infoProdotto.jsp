@@ -14,9 +14,10 @@
 <body>
 	<%List<Prodotto> prodotti = (List<Prodotto>)request.getAttribute("prodotti");%>
 	<%@ include file="navbar.jsp"%>
-	<div class="container">	
+	<div class="container">
 		<%if(prodotti != null) {%>
 		<div class = "row">
+			<div class="col-1"><p></p></div>
 			<div class="col-lg-5 col-md-5">
 				<a class = "btn btn-danger" href="prodotto?searchTerm=<%= prodotti.get(1).getNome()%>">RIMUOVI</a>
 			</div>
@@ -25,6 +26,7 @@
 			</div>
 			</div>
 			<div class = "row">
+				<div class="col-1"><p></p></div>
 				<div class="col-lg-5 col-md-5">	
 					<img class = "mt-2" src="<%= prodotti.get(0).getLinkFotoDetail()%>" height = "100%" width = "300">
 				</div>
@@ -33,6 +35,7 @@
 				</div>
 			</div>
 			<div class = "row mt-5">
+			<div class="col-1"><p></p></div>
 			<div class="col-lg-5 col-md-5">
 							<table class="table border">
 								<tbody>
@@ -104,6 +107,7 @@
 							</div>
 			</div>
 			<div class = "row">
+			<div class="col-1"><p></p></div>
 			<div class = "col-5 mt-5">
 							<table class="table border">
 								<thead>
@@ -190,10 +194,15 @@
           								<input type="search" class="form-control" placeholder="Confronta con..." aria-label="Search" name="searchTerm">
           								<input type = "hidden" name = "idProdotto1" value = "<%= prodotto.getId()%>">
         						</form>
-        						<!-- <form class = "mt-5" action="">
-        							<input size= "1" class = "" type= "number" name = "quantita" placeholder="quantità">
+        						 <form class = "mt-5" method = "post" action="lista-spesa-prodotto">
+        						 	<% for(int i = 0; i < prodotto.getCatenaProdotto().size(); i++) {%>
+        						 	<input type = "hidden" name = "prezzo<%= i%>" value = "<%= prodotto.getCatenaProdotto().get(i).getPrezzo()%>">
+        						 	<% }%>
+        						 	<label for = "formQuantità">Quantità</label> <br>			 	
+        							<input class = "" id = "formQuantità" type= "number" value = "1" name = "quantita" placeholder="quantità">
+        							<input type = "hidden" name = "id" value = "<%= prodotto.getId()%>">
         							<button class = "btn btn-primary" type="submit">Aggiungi alla lista</button>
-        						</form>  -->
+        						</form>  
 							</div>
 				<div class = "col-5 mt-5">
 							<table class="table border">
