@@ -53,7 +53,7 @@ public class ProdottoRepositoryImpl extends JpaRepositoryImpl<Prodotto, Integer>
 			tx = em.getTransaction();
 			tx.begin();
 			prodotto = em.createQuery(
-					"SELECT p FROM Prodotto p JOIN FETCH p.catenaProdotto d JOIN FETCH p.etichetta e WHERE p.id =: id",
+					"SELECT p FROM Prodotto p JOIN FETCH p.catenaProdotto d JOIN FETCH p.etichetta e WHERE p.id =: id ORDER BY d.prezzo ASC",
 					Prodotto.class).setParameter("id", id).getSingleResult();
 			tx.commit();
 		} catch (PersistenceException e) {
@@ -87,6 +87,28 @@ public class ProdottoRepositoryImpl extends JpaRepositoryImpl<Prodotto, Integer>
 				em.close();
 		}
 		return prodotti;
+	}
+	
+	@Override
+	public Prodotto searchByNome(String searchTerm) {
+		Prodotto prodotto= null;
+		EntityTransaction tx = null;
+		EntityManager em = null;
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			prodotto = em.createQuery("SELECT p FROM Prodotto p WHERE p.nome LIKE :nome", Prodotto.class).setParameter("nome", searchTerm + "%").getSingleResult();
+			tx.commit();
+		} catch (PersistenceException e) {
+			System.err.println(e.getMessage());
+			if(tx != null && tx.isActive())
+				tx.rollback();
+		} finally {
+			if(em != null)
+				em.close();
+		}
+		return prodotto;
 	}
 }
 

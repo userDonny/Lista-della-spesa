@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -39,6 +40,9 @@ public class Utente {
 	@Temporal(TemporalType.DATE)
 	@Column (name = "data_nascita", nullable = false)
 	private Date dataNascita;
+	
+	@OneToOne (mappedBy = "utente")
+	private ListaSpesa listaSpesa;
 
 	public int getId() {
 		return id;
@@ -102,6 +106,14 @@ public class Utente {
 
 	public void setDataNascita(Date dataNascita) {
 		this.dataNascita = dataNascita;
+	}
+
+	public ListaSpesa getListaSpesa() {
+		return listaSpesa;
+	}
+
+	public void setListaSpesa(ListaSpesa listaSpesa) {
+		this.listaSpesa = listaSpesa;
 	}
 
 	@Override

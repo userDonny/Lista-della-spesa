@@ -7,8 +7,8 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
          <!-- <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
-          <li><a href="#" class="nav-link px-2 link-body-emphasis">Inventory</a></li>
-          <li><a href="#" class="nav-link px-2 link-body-emphasis">Customers</a></li>  --> 
+          <li><a href="#" class="nav-link px-2 link-body-emphasis">Inventory</a></li> --> 
+          <li><a href="lista-spesa.jsp" class="nav-link px-2 link-body-emphasis">Lista Spesa</a></li> 
           <li class="nav-item dropdown">
           <a class="nav-link px-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie

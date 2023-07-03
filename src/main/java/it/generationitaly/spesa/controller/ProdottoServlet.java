@@ -24,7 +24,7 @@ public class ProdottoServlet extends HttpServlet {
 			int idProdotto1 = Integer.parseInt(request.getParameter("idProdotto1"));
 			Prodotto prodotto = prodottoRepository.prodottoJoinCatenaProdottoJoinEtichetta(idProdotto1);
 			String searchTerm = request.getParameter("searchTerm");
-			Prodotto prodotto2 = prodottoRepository.searchByNomeOrSearchByMarca(searchTerm).get(0);
+			Prodotto prodotto2 = prodottoRepository.searchByNome(searchTerm);
 			prodotto2 = prodottoRepository.prodottoJoinCatenaProdottoJoinEtichetta(prodotto2.getId());
 			List<Prodotto> prodotti = new ArrayList<Prodotto>();
 			prodotti.add(prodotto);
@@ -40,7 +40,7 @@ public class ProdottoServlet extends HttpServlet {
 			return;
 		} else {
 			String searchTerm = request.getParameter("searchTerm");
-			Prodotto prodotto2 = prodottoRepository.searchByNomeOrSearchByMarca(searchTerm).get(0);
+			Prodotto prodotto2 = prodottoRepository.searchByNome(searchTerm);
 			prodotto2 = prodottoRepository.prodottoJoinCatenaProdottoJoinEtichetta(prodotto2.getId());
 			request.setAttribute("prodotto", prodotto2);
 			request.getRequestDispatcher("infoProdotto.jsp").forward(request, response);

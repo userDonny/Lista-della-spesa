@@ -2,10 +2,8 @@ package it.generationitaly.spesa.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -40,7 +38,7 @@ public class Prodotto{
 	
 	@Column(name = "link_foto_small", length = 4000)
 	private String linkFotoSmall;
-
+	
 	@OneToMany(mappedBy = "prodotto")
 	private List<CatenaProdotto> catenaProdotto = new ArrayList<CatenaProdotto>();
 
@@ -51,6 +49,9 @@ public class Prodotto{
 	@ManyToOne
 	@JoinColumn(name = "categoria_id", nullable = false)
 	private Categoria categoria;
+	
+	@OneToMany (mappedBy = "prodotto")
+	private List<ListaSpesaProdotto> listaSpesaProdotto = new ArrayList<ListaSpesaProdotto>();
 
 	public int getId() {
 		return id;
@@ -132,10 +133,16 @@ public class Prodotto{
 		this.categoria = categoria;
 	}
 
+	public List<ListaSpesaProdotto> getListaSpesaProdotto() {
+		return listaSpesaProdotto;
+	}
+
+	public void setListaSpesaProdotto(List<ListaSpesaProdotto> listaSpesaProdotto) {
+		this.listaSpesaProdotto = listaSpesaProdotto;
+	}
+
 	@Override
 	public String toString() {
-		return "Prodotto [nome=" + nome + ", marca=" + marca + ", descrizione=" + descrizione + ", peso=" + peso
-				+ ", linkFotoDetail=" + linkFotoDetail + ", linkFotoSmall=" + linkFotoSmall + ", catenaProdotto="
-				+ catenaProdotto + ", etichetta=" + etichetta + ", categoria=" + categoria + "]";
+		return "Prodotto [nome=" + nome + ", marca=" + marca + ", descrizione=" + descrizione + ", peso=" + peso + "]";
 	}
 }

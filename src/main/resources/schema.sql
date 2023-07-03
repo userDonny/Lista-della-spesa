@@ -51,3 +51,20 @@ CREATE TABLE catena_prodotto (
     prodotto_id INT NOT NULL REFERENCES prodotto (id),
     UNIQUE (catena_id , prodotto_id)
 );
+
+CREATE TABLE lista_spesa (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    data_lista_spesa DATE NOT NULL,
+    prezzo_totale DOUBLE NOT NULL,
+    utente_id INT UNIQUE NOT NULL REFERENCES utente(id)
+);
+
+CREATE TABLE lista_spesa_prodotto (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    prodotto_id INT NOT NULL REFERENCES prodotto(id),
+    lista_spesa_id INT NOT NULL REFERENCES lista_spesa(id),
+    prezzo DOUBLE NOT NULL,
+    quantita INT NOT NULL,
+    prezzo_totale DOUBLE NOT NULL,
+    UNIQUE(lista_spesa_id, prodotto_id)
+);

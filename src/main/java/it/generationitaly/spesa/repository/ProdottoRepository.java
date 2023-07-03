@@ -11,4 +11,6 @@ public interface ProdottoRepository extends JpaRepository<Prodotto, Integer> {
 	Prodotto prodottoJoinCatenaProdottoJoinEtichetta(int id);
 	
 	List<Prodotto> searchByNomeOrSearchByMarca(String searchTerm);
+	
+	Prodotto searchByNome(String searchTerm);
 }
