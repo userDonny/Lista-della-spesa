@@ -37,7 +37,7 @@
 </tr>
 </tbody>
 </table>
-	<form action="profilo" method="post">
+	<form action="profiloUpdate.jsp" method="post">
 		<input type="submit" class="btn btn-primary" value="MODIFICA">
 	</form>
 </body>
