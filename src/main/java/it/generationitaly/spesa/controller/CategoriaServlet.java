@@ -25,13 +25,14 @@ public class CategoriaServlet extends HttpServlet {
 			throws ServletException, IOException {
 		if (request.getParameter("categoriaId") != null) {
 			int id = Integer.parseInt(request.getParameter("categoriaId"));
-			// request.getSession().setAttribute("id", id);
 			List<Prodotto> prodotti = prodottoRepository.prodottoJoinFetchCategoria(id);
 			request.setAttribute("prodotti", prodotti);
 			request.getRequestDispatcher("prodotti.jsp").forward(request, response);
 			return;
 		}
 		List<Categoria> categorie = categoriaRepository.findAll();
+		List<Prodotto> allProdotti = prodottoRepository.findAll();
+		request.setAttribute("allProdotti", allProdotti);
 		request.setAttribute("categorie", categorie);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}

@@ -66,29 +66,28 @@ public class ProdottoRepositoryImpl extends JpaRepositoryImpl<Prodotto, Integer>
 		}
 		return prodotto;
 	}
-
+	
 	@Override
-	public Prodotto findByNome(String nome) {
-		Prodotto prodotto = null;
+	public List<Prodotto> searchByNomeOrSearchByMarca(String searchTerm) {
+		List <Prodotto> prodotti= null;
 		EntityTransaction tx = null;
 		EntityManager em = null;
 		try {
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-	prodotto = em.createQuery("SELECT p FROM Prodotto p WHERE p.nome =: nome", Prodotto.class).setParameter("nome", nome).getSingleResult();
+			prodotti = em.createQuery("SELECT p FROM Prodotto p WHERE p.nome LIKE :nome OR p.marca LIKE :marca", Prodotto.class).setParameter("nome", searchTerm + "%").setParameter("marca", searchTerm + "%").getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
 			System.err.println(e.getMessage());
-			if (tx != null && tx.isActive())
+			if(tx != null && tx.isActive())
 				tx.rollback();
 		} finally {
-			if (em != null)
+			if(em != null)
 				em.close();
 		}
-		return prodotto;
+		return prodotti;
 	}
-	
 }
 
 
