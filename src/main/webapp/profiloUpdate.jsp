@@ -17,20 +17,20 @@
 	<input type="text" id="cognome" name="cognome"
 		placeholder="${profilo.cognome}" readonly="readonly">
 		<label for="dataNascita">DATA NASCITA</label>
-	<input type="date" id="dataNascita" name="data"
+	<input type="date" id="dataNascita" name="dataNascita"
 		placeholder="${profilo.dataNascita}" readonly="readonly">
 		<label for="sesso">SESSO</label>
 	<input type="checkbox" id="sesso" name="sesso"
 		placeholder="${profilo.sesso}" readonly="readonly">
 	<label for="email">E-MAIL</label>
-	<input type="email" id="email" name="username"
-		value=>
+	<input type="email" id="email" name="email"
+		value="${profilo.email }">
 	<label for="username">USERNAME</label>
 	<input type="text" id="username" name="username"
 		value="${profilo.username}">
 	<label for="password">PASSWORD</label>
 	<input type="password" id="password" name="password"
-		value="${profilo.username}">
+		value="${profilo.password}">
 		<button type="button" >SALVA</button>
 		</form>
 </body>
