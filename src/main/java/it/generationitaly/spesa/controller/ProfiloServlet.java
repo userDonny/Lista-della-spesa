@@ -28,7 +28,8 @@ public class ProfiloServlet extends HttpServlet {
 		Utente utente = ur.findById(id);
 	
 		request.setAttribute("profilo", utente);
-		request.getRequestDispatcher("profilo.jsp").forward(request, response);
+//		request.getRequestDispatcher("profilo.jsp", "profiloUpdate.jsp").forward(request, response);
+		request.getRequestDispatcher("profiloUpdate.jsp").forward(request, response);
 
 	}
 
