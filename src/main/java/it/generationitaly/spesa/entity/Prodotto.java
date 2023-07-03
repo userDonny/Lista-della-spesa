@@ -1,42 +1,48 @@
 package it.generationitaly.spesa.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "prodotto")
-public class Prodotto {
+public class Prodotto{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@Column(name = "nome", length = 45)
+	private String nome;
 
 	@Column(name = "marca", length = 45, unique = true, nullable = false)
 	private String marca;
 
-	@Column(name = "prezzo", nullable = false)
-	private double prezzo;
-
-	@Column(name = "descrizione", length = 500, nullable = true)
+	@Column(name = "descrizione", length = 500)
 	private String descrizione;
 
 	@Column(name = "peso", nullable = false)
 	private double peso;
+	
 	@Column(name = "link_foto_detail", length = 4000)
 	private String linkFotoDetail;
+	
 	@Column(name = "link_foto_small", length = 4000)
 	private String linkFotoSmall;
 
-	@ManyToOne
-	@JoinColumn(name = "catena_id", nullable = false)
-	private Catena catena;
+	@OneToMany(mappedBy = "prodotto")
+	private List<CatenaProdotto> catenaProdotto = new ArrayList<CatenaProdotto>();
 
 	@OneToOne
 	@JoinColumn(name = "etichetta_id", unique = true, nullable = false)
@@ -54,20 +60,20 @@ public class Prodotto {
 		this.id = id;
 	}
 
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public String getMarca() {
 		return marca;
 	}
 
 	public void setMarca(String marca) {
 		this.marca = marca;
-	}
-
-	public double getPrezzo() {
-		return prezzo;
-	}
-
-	public void setPrezzo(double prezzo) {
-		this.prezzo = prezzo;
 	}
 
 	public String getDescrizione() {
@@ -102,12 +108,12 @@ public class Prodotto {
 		this.linkFotoSmall = linkFotoSmall;
 	}
 
-	public Catena getCatena() {
-		return catena;
+	public List<CatenaProdotto> getCatenaProdotto() {
+		return catenaProdotto;
 	}
 
-	public void setCatena(Catena catena) {
-		this.catena = catena;
+	public void setCatenaProdotto(List<CatenaProdotto> catenaProdotto) {
+		this.catenaProdotto = catenaProdotto;
 	}
 
 	public Etichetta getEtichetta() {
@@ -128,8 +134,8 @@ public class Prodotto {
 
 	@Override
 	public String toString() {
-		return "Prodotto [id=" + id + ", marca=" + marca + ", prezzo=" + prezzo + ", descrizione=" + descrizione
-				+ ", peso=" + peso + ", linkFotoDetail=" + linkFotoDetail + ", linkFotoSmall=" + linkFotoSmall + "]";
+		return "Prodotto [nome=" + nome + ", marca=" + marca + ", descrizione=" + descrizione + ", peso=" + peso
+				+ ", linkFotoDetail=" + linkFotoDetail + ", linkFotoSmall=" + linkFotoSmall + ", catenaProdotto="
+				+ catenaProdotto + ", etichetta=" + etichetta + ", categoria=" + categoria + "]";
 	}
-
 }

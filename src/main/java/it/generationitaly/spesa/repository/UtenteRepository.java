@@ -7,4 +7,6 @@ public interface UtenteRepository extends JpaRepository<Utente,Integer>{
 	Utente findByUsername(String username);
 	
 	void deleteByUsername(String username);
+	
+	Utente findByUsernameOrEmail(String username, String email);
 }

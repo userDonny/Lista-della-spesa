@@ -21,8 +21,8 @@ public class Catena {
 	@Column(name = "denominazione", length = 45, unique = true, nullable = false)
 	private String denominazione;
 
-	@OneToMany(mappedBy = "catena") // , fetch = FetchType.EAGER)
-	private List<Prodotto> prodotti = new ArrayList<Prodotto>();
+	@OneToMany(mappedBy = "catena")
+	private List<CatenaProdotto> catenaProdotto = new ArrayList<CatenaProdotto>();
 
 	public int getId() {
 		return id;
@@ -40,17 +40,17 @@ public class Catena {
 		this.denominazione = denominazione;
 	}
 
-	public List<Prodotto> getProdotti() {
-		return prodotti;
+	public List<CatenaProdotto> getCatenaProdotto() {
+		return catenaProdotto;
 	}
 
-	public void setProdotti(List<Prodotto> prodotti) {
-		this.prodotti = prodotti;
+	public void setCatenaProdotto(List<CatenaProdotto> catenaProdotto) {
+		this.catenaProdotto = catenaProdotto;
 	}
 
 	@Override
 	public String toString() {
-		return "Catena [id=" + id + ", denominazione=" + denominazione + "]";
+		return "Catena [denominazione=" + denominazione + ", catenaProdotto=" + catenaProdotto + "]";
 	}
 
 }
