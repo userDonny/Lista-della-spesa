@@ -11,7 +11,7 @@
             Categorie
           </a>
           <ul class="dropdown-menu">
-          <c:forEach var="categoria" items = "${sessionScope.categorie}">
+          <c:forEach var="categoria" items = "${categorie}">
             <li><a class="dropdown-item" href="categoria?categoriaId=${categoria.id}">${categoria.nome}</a></li>
            </c:forEach>
           </ul>
