@@ -16,10 +16,10 @@
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
-	<div class="form-floating">
+	<div class="form-floating mt-5">
 		<div class="row">
-			<div class="col-sm-2 col-md-4 col-lg-4">
-				<form action="profiloUpdate" method="post">
+			<div class="col-sm-2 col-md-4 col-lg-4 mx-auto">
+				<form action="profilo" method="post">
 					<label for="nome">NOME</label> <input type="text" id="nome"
 						class="form-control" name="nome" placeholder="${profilo.nome}"
 						readonly="readonly"> <label for="cognome">COGNOME</label>
@@ -37,9 +37,16 @@
 						id="username" name="username" value="${profilo.username}"
 						class="form-control"> <label for="password">PASSWORD</label>
 					<input type="password" id="password" name="password"
-						value="${profilo.password}" class="form-control">
-					
-					<button type="submit">SALVA MODIFICHE</button>
+						value="${profilo.password}" class="form-control">					
+					<button class = "btn btn-primary mt-3" type="submit">MODIFICA</button>
+				</form>
+				<c:choose>
+					<c:when test="${update != null}">
+						<h6 style = "color: red"> Acccount modificato correttamente</h6>
+					</c:when>
+				</c:choose>
+				<form method = "post" action = "delete-utente" class = "mt-4">
+				<button class = "btn btn-danger" type = "submit"> ELIMINA ACCOUNT</button>
 				</form>
 			</div>
 		</div>
