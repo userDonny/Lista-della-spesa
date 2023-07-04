@@ -3,8 +3,10 @@ package it.generationitaly.spesa.entity;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,14 +29,11 @@ public class ListaSpesa {
 	@Column (name = "data_lista_spesa", nullable = false)
 	private Date data;
 	
-	@Column (name = "prezzo_totale", nullable = false)
-	private double prezzoTotale;
-	
 	@OneToOne 
-	@JoinColumn(name = "utente_id", unique = true, nullable = false)
+	@JoinColumn(name = "utente_id", unique = true ,nullable = false)
 	private Utente utente;
 	
-	@OneToMany (mappedBy = "listaSpesa")
+	@OneToMany (mappedBy = "listaSpesa", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<ListaSpesaProdotto> listaSpesaProdotto = new ArrayList<ListaSpesaProdotto>();
 
 	public int getId() {
@@ -53,14 +52,6 @@ public class ListaSpesa {
 		this.data = data;
 	}
 
-	public double getPrezzoTotale() {
-		return prezzoTotale;
-	}
-
-	public void setPrezzoTotale(double prezzoTotale) {
-		this.prezzoTotale = prezzoTotale;
-	}
-
 	public Utente getUtente() {
 		return utente;
 	}
@@ -76,9 +67,17 @@ public class ListaSpesa {
 	public void setListaSpesaProdotto(List<ListaSpesaProdotto> listaSpesaProdotto) {
 		this.listaSpesaProdotto = listaSpesaProdotto;
 	}
-	
+
 	public List<ListaSpesa> calcolaPrezzoTotale (List<ListaSpesaProdotto> totProdotto){
+		/*for(int i = 0; i < 4; i++) {
+			
+		}*/
 		return null;
+	}
+
+	@Override
+	public String toString() {
+		return "ListaSpesa [id=" + id + ", data=" + data + ", utente=" + utente  + "]";
 	}
 
 	/*
@@ -100,4 +99,6 @@ public class ListaSpesa {
 		}
 		return min;
 	}*/
+	
+	
 }

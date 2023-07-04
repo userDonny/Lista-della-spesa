@@ -50,7 +50,6 @@ public class Catena {
 
 	@Override
 	public String toString() {
-		return "Catena [denominazione=" + denominazione + ", catenaProdotto=" + catenaProdotto + "]";
+		return "Catena [id=" + id + ", denominazione=" + denominazione + ", catenaProdotto=" + catenaProdotto + "]";
 	}
-
 }

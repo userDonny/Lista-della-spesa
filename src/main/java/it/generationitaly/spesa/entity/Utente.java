@@ -1,6 +1,8 @@
 package it.generationitaly.spesa.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,24 +26,24 @@ public class Utente {
 
 	@Column(name = "password", length = 45, nullable = false)
 	private String password;
-	
+
 	@Column(name = "email", length = 45, unique = true, nullable = false)
 	private String email;
-	
+
 	@Column(name = "nome", length = 45, nullable = false)
 	private String nome;
-	
+
 	@Column(name = "cognome", length = 45, nullable = false)
 	private String cognome;
-	
+
 	@Column(name = "sesso", length = 1, nullable = false)
 	private char sesso;
-	
+
 	@Temporal(TemporalType.DATE)
-	@Column (name = "data_nascita", nullable = false)
+	@Column(name = "data_nascita", nullable = false)
 	private Date dataNascita;
-	
-	@OneToOne (mappedBy = "utente")
+
+	@OneToOne(mappedBy = "utente")
 	private ListaSpesa listaSpesa;
 
 	public int getId() {

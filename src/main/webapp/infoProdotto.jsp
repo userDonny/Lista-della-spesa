@@ -194,9 +194,10 @@
           								<input type="search" class="form-control" placeholder="Confronta con..." aria-label="Search" name="searchTerm">
           								<input type = "hidden" name = "idProdotto1" value = "<%= prodotto.getId()%>">
         						</form>
-        						 <form class = "mt-5" method = "post" action="lista-spesa-prodotto">
+        						 <form class = "mt-5" method = "post" action="lista-spesa">
         						 	<% for(int i = 0; i < prodotto.getCatenaProdotto().size(); i++) {%>
         						 	<input type = "hidden" name = "prezzo<%= i%>" value = "<%= prodotto.getCatenaProdotto().get(i).getPrezzo()%>">
+        						 	<input type = "hidden" name = "catena<%= i%>" value = "<%= prodotto.getCatenaProdotto().get(i).getCatena().getId()%>">
         						 	<% }%>
         						 	<label for = "formQuantità">Quantità</label> <br>			 	
         							<input class = "" id = "formQuantità" type= "number" value = "1" name = "quantita" placeholder="quantità">
