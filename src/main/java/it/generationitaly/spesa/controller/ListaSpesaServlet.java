@@ -32,11 +32,13 @@ public class ListaSpesaServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/*
-		 * List<Prodotto> prodottiSpesa = prodottoRepository.findByListaSpesa();
-		 * request.setAttribute("prodottiSpesa", prodottiSpesa);
-		 * request.getRequestDispatcher("listaSpesa.jsp").forward(request, response);
-		 */
+		int idUtente = (int) request.getSession().getAttribute("idUtente");
+		Utente utente = utenteRepository.findById(idUtente);
+		ListaSpesa listaSpesa = listaSpesaRepository.findByUtente(utente);
+		if(listaSpesa != null) {
+		request.setAttribute("listaSpesa", listaSpesa);
+		request.getRequestDispatcher("lista-spesa.jsp").forward(request, response);
+		}
 	}
 
 	@Override
@@ -67,6 +69,8 @@ public class ListaSpesaServlet extends HttpServlet {
 			listaSpesa.getListaSpesaProdotto().add(listaSpesaProdotto);
 			listaSpesaProdottoRepository.save(listaSpesaProdotto);
 		}
+		request.setAttribute("listaSpesa", listaSpesa);
+		request.getRequestDispatcher("lista-spesa.jsp").forward(request, response);
 	}
 	
 	/*private void leggiParameters(double prezzo, CatenaProdotto aggiunta, HttpServletRequest request, int quantita, 

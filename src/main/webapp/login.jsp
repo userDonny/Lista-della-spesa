@@ -97,9 +97,7 @@
 <body class="text-center">
 	<main class="form-signin w-100 m-auto">
 		<form method="post" action="login">
-			<!-- <img class="mb-4"
-				src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg"
-				alt="" width="72" height="57">  -->
+			<img class="mb-3" src="immagini/bianco.png" width="180" height="180">
 			<!-- <h1 class="h3 mb-3 fw-normal"></h1>  -->
 			<div class="form-floating">
 				<input type="text" class="form-control" id="username" name="username"

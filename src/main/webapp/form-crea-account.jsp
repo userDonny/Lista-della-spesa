@@ -97,9 +97,7 @@
 <body class="text-center">
 	<main class="form-signin w-100 m-auto">
 		<form method="post" action="save-utente">
-			<img class="mb-4"
-				src=""
-				alt="" width="72" height="57">
+			<img class="mb-2" src="immagini/bianco.png" alt="" width="180" height="180">
 			<h1 class="h3 mb-3 fw-normal">Iscriviti</h1>
 			<div class="form-floating">
 				<input type="text" class="form-control" id="nome" name="nome"

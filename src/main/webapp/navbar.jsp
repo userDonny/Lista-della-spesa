@@ -4,18 +4,15 @@
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
         </a>
-
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-         <!-- <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
-          <li><a href="#" class="nav-link px-2 link-body-emphasis">Inventory</a></li> --> 
-          <li><a href="lista-spesa.jsp" class="nav-link px-2 link-body-emphasis">Lista Spesa</a></li> 
+          <a href ="categoria"> <img class="navbar-brand" src="immagini/navbar.png" width="60" height="60"> </a> 
           <li class="nav-item dropdown">
-          <a class="nav-link px-2 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link px-2 dropdown-toggle link-body-emphasis ms-4 mt-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
           </a>
           <ul class="dropdown-menu">
-          <c:forEach var="categoria" items = "${categorie}">
-            <li><a class="dropdown-item" href="#">${categoria.nome}</a></li>
+          <c:forEach var="categoria" items = "${sessionScope.categorie}">
+            <li><a class="dropdown-item" href="categoria?categoriaId=${categoria.id}">${categoria.nome}</a></li>
            </c:forEach>
           </ul>
         </li>
@@ -23,6 +20,11 @@
         <form method="get" action="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <input type="search" class="form-control" placeholder="Cerca prodotto" aria-label="Search" name="q">
         </form>
+        <a href="lista-spesa" class="d-block link-body-emphasis text-decoration-none me-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+  			<path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+			</svg>
+		</a>
         <div class="dropdown text-end">
           <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
