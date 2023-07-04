@@ -24,7 +24,7 @@
       </c:forEach>
       </div>
       <div class = "row mt-3">
-      	<h1 style = "background-color: rgb(235, 196, 113)" class = "text-center">TUTTI I PRODOTTI</h1>
+      	<h1 style = "font-family: 'Sofia', sans-serif; background-color: rgb(235, 196, 113)" class = "text-center">TUTTI I PRODOTTI</h1>
       	<c:forEach var = "prodotto" items = "${allProdotti}">
       		<div class = "col-3 mt-3">
       		<a class="card rounded btn border-3" href="prodotto?idProdotto1=${prodotto.id }">
