@@ -1,0 +1,9 @@
+.navbar-brand:hover{	
+	animation-duration: 1s;
+	transform: scale(1.2, 1.2);
+	box-shadow:3px;
+}
+
+.navbar-brand:on-click{
+	transform: scale(0.8, 0.8);
+}
