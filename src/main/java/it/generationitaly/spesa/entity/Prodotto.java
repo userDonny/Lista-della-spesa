@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -39,7 +40,7 @@ public class Prodotto{
 	@Column(name = "link_foto_small", length = 4000)
 	private String linkFotoSmall;
 	
-	@OneToMany(mappedBy = "prodotto")
+	@OneToMany(mappedBy = "prodotto", fetch = FetchType.EAGER)
 	private List<CatenaProdotto> catenaProdotto = new ArrayList<CatenaProdotto>();
 
 	@OneToOne

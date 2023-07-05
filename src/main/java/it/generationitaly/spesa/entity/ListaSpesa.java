@@ -33,7 +33,7 @@ public class ListaSpesa {
 	@JoinColumn(name = "utente_id", unique = true ,nullable = false)
 	private Utente utente;
 	
-	@OneToMany (mappedBy = "listaSpesa", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany (mappedBy = "listaSpesa",  fetch = FetchType.EAGER)
 	private List<ListaSpesaProdotto> listaSpesaProdotto = new ArrayList<ListaSpesaProdotto>();
 
 	public int getId() {
@@ -68,37 +68,15 @@ public class ListaSpesa {
 		this.listaSpesaProdotto = listaSpesaProdotto;
 	}
 
-	public List<Double> prezziTotali (){
-		List<Double> tot = new ArrayList<Double>();
-			for (ListaSpesaProdotto element : listaSpesaProdotto) {
-				element.getProdotto().getCatenaProdotto().get(i)
-			}
+	public double prezziTotali (int idCatena, int id, double prezzo){
+		if(idCatena == id) {
+			return prezzo;
+		}
+		return 0;
 	}
 
 	@Override
 	public String toString() {
 		return "ListaSpesa [id=" + id + ", data=" + data + ", utente=" + utente  + "]";
 	}
-
-	/*
-
-	public double prezzoTotale() {
-		double tot = 0;
-		for (CatenaProdotto prodotto: listaSpesa) {
-			tot += (prodotto.getPrezzo() * prodotto.getQuantita());
-		}
-		return tot;
-	}
-	
-	public double confrontaPrezzi (List<Double> totale) {
-		double min = totale.get(0);
-		for (int i = 1; i < totale.size(); i++) {
-			if(totale.get(i) < min) {
-				min = totale.get(i);
-			}
-		}
-		return min;
-	}*/
-	
-	
 }

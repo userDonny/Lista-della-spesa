@@ -18,7 +18,7 @@
     <div class="row">
     	<c:forEach var="categoria" items="${requestScope.categorie}">
       <div class="col-lg-2 mt-3">
-      <a class = "card rounded btn btn-primary" href="categoria?categoriaId=${categoria.id}">
+      <a class = "card rounded btn btn-info" href="categoria?categoriaId=${categoria.id}">
          <img src="${categoria.linkFoto}" height ="120" width="150">
         <h6 class = "mt-1"> ${categoria.nome}</h6>
         </a>

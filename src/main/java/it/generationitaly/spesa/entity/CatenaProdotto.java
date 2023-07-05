@@ -31,8 +31,6 @@ public class CatenaProdotto {
 	@JoinColumn(name = "prodotto_id", nullable = false, unique = true)
 	private Prodotto prodotto;
 	
-	private transient double prezzoTotaleProdotto;
-	
 	public int getId() {
 		return id;
 	}
@@ -72,18 +70,10 @@ public class CatenaProdotto {
 	public void setProdotto(Prodotto prodotto) {
 		this.prodotto = prodotto;
 	}
-	
-	public double getPrezzoTotaleProdotto() {
-		return prezzoTotaleProdotto;
-	}
-
-	public void setPrezzoTotaleProdotto() {
-		this.prezzoTotaleProdotto = prezzo * quantita;
-	}
 
 	@Override
 	public String toString() {
 		return "CatenaProdotto [id=" + id + ", prezzo=" + prezzo + ", quantita=" + quantita + ", catena=" + catena
-				+ ", prodotto=" + prodotto + ", prezzoTotaleProdotto=" + prezzoTotaleProdotto + "]";
+				+ ", prodotto=" + prodotto + "]";
 	}
 }

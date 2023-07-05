@@ -60,6 +60,7 @@ public class ListaSpesaServlet extends HttpServlet {
 			listaSpesaProdotto.setQuantita(quantita);		
 			listaSpesa.getListaSpesaProdotto().add(listaSpesaProdotto);
 			listaSpesaRepository.save(listaSpesa);
+			listaSpesaProdottoRepository.save(listaSpesaProdotto);
 		} else {
 			Prodotto prodotto = prodottoRepository.findById(id);
 			ListaSpesaProdotto listaSpesaProdotto = new ListaSpesaProdotto();
@@ -72,16 +73,4 @@ public class ListaSpesaServlet extends HttpServlet {
 		request.setAttribute("listaSpesa", listaSpesa);
 		request.getRequestDispatcher("lista-spesa.jsp").forward(request, response);
 	}
-	
-	/*private void leggiParameters(double prezzo, CatenaProdotto aggiunta, HttpServletRequest request, int quantita, 
-			List<CatenaProdotto> catenaProdotto, Prodotto prodotto, int i) {
-		prezzo = Double.parseDouble(request.getParameter("prezzo" + i));
-		aggiunta = new CatenaProdotto();
-		aggiunta.setPrezzo(prezzo);
-		aggiunta.setQuantita(quantita);
-		aggiunta.setPrezzoTotaleProdotto();
-		catenaProdotto = new ArrayList<CatenaProdotto>();
-		catenaProdotto.add(aggiunta);
-		prodotto.setCatenaProdotto(catenaProdotto);
-	}*/
 }

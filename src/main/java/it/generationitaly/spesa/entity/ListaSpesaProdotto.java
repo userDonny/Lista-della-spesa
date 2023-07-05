@@ -59,4 +59,9 @@ public class ListaSpesaProdotto {
 	public void setQuantita(int quantita) {
 		this.quantita = quantita;
 	}
+	
+	public double prezzoTotaleProdotto(double prezzo) {
+		double tot = quantita * prezzo;
+		return tot;
+	}
 }

@@ -195,15 +195,11 @@
           								<input type = "hidden" name = "idProdotto1" value = "<%= prodotto.getId()%>">
         						</form>
         						 <form class = "mt-5" method = "post" action="lista-spesa">
-        						 	<% for(int i = 0; i < prodotto.getCatenaProdotto().size(); i++) {%>
-        						 	<input type = "hidden" name = "prezzo<%= i%>" value = "<%= prodotto.getCatenaProdotto().get(i).getPrezzo()%>">
-        						 	<input type = "hidden" name = "catena<%= i%>" value = "<%= prodotto.getCatenaProdotto().get(i).getCatena().getId()%>">
-        						 	<% }%>
         						 	<label for = "formQuantità">Quantità</label> <br>			 	
         							<input class = "" id = "formQuantità" type= "number" value = "1" name = "quantita" placeholder="quantità">
         							<input type = "hidden" name = "id" value = "<%= prodotto.getId()%>">
         							<button class = "btn btn-primary" type="submit">Aggiungi alla lista</button>
-        						</form>  
+        						</form> 
 							</div>
 				<div class = "col-5 mt-5">
 							<table class="table border">
@@ -226,7 +222,6 @@
 			</div>
 			</div>			
 			<% } %>
-	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
