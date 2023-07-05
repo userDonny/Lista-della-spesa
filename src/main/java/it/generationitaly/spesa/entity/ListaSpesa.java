@@ -68,11 +68,11 @@ public class ListaSpesa {
 		this.listaSpesaProdotto = listaSpesaProdotto;
 	}
 
-	public List<ListaSpesa> calcolaPrezzoTotale (List<ListaSpesaProdotto> totProdotto){
-		/*for(int i = 0; i < 4; i++) {
-			
-		}*/
-		return null;
+	public List<Double> prezziTotali (){
+		List<Double> tot = new ArrayList<Double>();
+			for (ListaSpesaProdotto element : listaSpesaProdotto) {
+				element.getProdotto().getCatenaProdotto().get(i)
+			}
 	}
 
 	@Override
