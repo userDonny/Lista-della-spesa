@@ -63,12 +63,18 @@ public class ListaSpesaServlet extends HttpServlet {
 			listaSpesaProdottoRepository.save(listaSpesaProdotto);
 		} else {
 			Prodotto prodotto = prodottoRepository.findById(id);
+			if(listaSpesaProdottoRepository.findByProdotto(prodotto, listaSpesa.getId()) != null) {
+				ListaSpesaProdotto lista = listaSpesaProdottoRepository.findByProdotto(prodotto, listaSpesa.getId());
+				lista.setQuantita(quantita);
+				listaSpesaProdottoRepository.update(lista);
+			} else {
 			ListaSpesaProdotto listaSpesaProdotto = new ListaSpesaProdotto();
 			listaSpesaProdotto.setProdotto(prodotto);
 			listaSpesaProdotto.setListaSpesa(listaSpesa);
 			listaSpesaProdotto.setQuantita(quantita);		
 			listaSpesa.getListaSpesaProdotto().add(listaSpesaProdotto);
 			listaSpesaProdottoRepository.save(listaSpesaProdotto);
+			}
 		}
 		request.setAttribute("listaSpesa", listaSpesa);
 		request.getRequestDispatcher("lista-spesa.jsp").forward(request, response);

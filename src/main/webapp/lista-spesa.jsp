@@ -3,6 +3,8 @@
 <%@page import="it.generationitaly.spesa.entity.ListaSpesa"%>
 <%@page import="it.generationitaly.spesa.entity.ListaSpesaProdotto"%>
 <%@page import="it.generationitaly.spesa.entity.CatenaPrezzo"%>
+<%@page import="java.util.List"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,13 +17,16 @@
 	</head>
 	<body>
 		<% ListaSpesa listaSpesa = (ListaSpesa) request.getAttribute("listaSpesa"); 
-		   CatenaPrezzo catenaPrezzoMin = (CatenaPrezzo)request.getAttribute ("catenaPrezzoMin");%>
+		   CatenaPrezzo catenaPrezzoMin = (CatenaPrezzo)request.getAttribute ("catenaPrezzoMin");
+		   List<CatenaPrezzo> catenaPrezzoList = (List<CatenaPrezzo>) request.getAttribute("catenaPrezzoList");%>
 	  <%@ include file = "navbar.jsp" %>
 	    <div class="container-fluid">
 	    <h1 style = "font-family: 'Sofia', sans-serif;background-color: rgb(235, 196, 113);" class = "text-center">Lista della spesa</h1>
 	      <div class="row mt-5"> <!-- Riga totale -->
 	      <div class="col-2" style="background-color:#fefcec"></div>
 	      <div class="col-md-5 col-sm-12"> <!-- Spazio per Card Prodotto -->
+	      <% SimpleDateFormat simpleDate = new SimpleDateFormat("dd/MM/yyyy"); %>
+	      <p>Data creazione: <b><%= simpleDate.format(listaSpesa.getData())%></b></p>
 	      	<form action="totali">
         			<button class = "btn btn-primary" type="submit">Calcola totale</button>
         	</form>
@@ -33,9 +38,9 @@
 	          </div>
 	          <div class="col-9"> <!-- colonna Corpo Card -->
 	          <div class="card-body"> <!-- Card body -->
-	          	<a class="stretched-link link-underline link-underline-opacity-0" href="prodotto?idProdotto1=<%= element.getProdotto().getId()%>"><span style="color:black"><span style="font-weight: 4; font-size:30px"><%= element.getProdotto().getNome()%></span><span style="font-weight: 4; font-size:40px"> /prezzo/ &#8364;</span></span></a>
-	          		 <!--  <p class="card-text" style = "font-weight: 4; font-size:20px">/prezzo/ &#8364;</p> -->
-	          		 <p class="card-text"><%= element.getQuantita()%></p>
+	          	<a class="stretched-link link-underline link-underline-opacity-0" href="prodotto?idProdotto1=<%= element.getProdotto().getId()%>"><span style="color:black"><span class = "ms-2" style="font-weight: 4; font-size:20px">Nome: <b><%= element.getProdotto().getNome()%> </b>
+	          	</span><br><span class = "ms-2" style="font-weight: 4; font-size:20px"> Marca: <b><%= element.getProdotto().getMarca()%> </b></span></span>
+	          	<br><span class = "ms-2" style="font-weight: 4; font-size:20px"> Quantità: <b><%= element.getQuantita()%> </b></span></span></a>
 	          </div> <!-- Card body -->
 			 </div>
 	          	</div>
@@ -60,7 +65,7 @@
 	        </div>
 	        <div class="col-3" style="background-color:rgb(235, 196, 113)"> <!-- Spazio per Card Totale -->
 	        	<div class="card rounded text-center border-3 mt-2 sticky-top">
-	        	<h3 class="card-title">Prezzo minore: <span class="card-text" style = "font-weight: 4; font-size:30px;">
+	        	<h3 class="card-title" style = "color: green">Prezzo minore: <span class="card-text" style = "color: green; font-weight: 4; font-size:30px;">
 	        	<% if (catenaPrezzoMin != null) {%>
 	        	<%= catenaPrezzoMin.getCatena().getDenominazione() %>
 	        	<%= catenaPrezzoMin.getPrezzoTotale() %>
@@ -68,7 +73,17 @@
 	        	&#8364;</span></h3>
 	          		<!-- <p class="card-text" style = "font-weight: 4"> &#8364;</p> -->
 	        </div>
-	                	
+	        <br>
+	        <br>
+	        <div style = "color : red">
+	        	<% if (catenaPrezzoList != null) {
+	        		for(CatenaPrezzo cp : catenaPrezzoList) {%>
+	        	<%= cp.getCatena().getDenominazione() %>
+	        	<%= cp.getPrezzoTotale() %>
+	        	<br>
+	        	<%} 
+	        	}%> 
+	        </div>               	
 	        </div> 
 	        <div class="col-2" style="background-color:#fefcec"></div>
 	        </div>

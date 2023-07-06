@@ -3,7 +3,6 @@ package it.generationitaly.spesa.entity;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -67,14 +66,7 @@ public class ListaSpesa {
 	public void setListaSpesaProdotto(List<ListaSpesaProdotto> listaSpesaProdotto) {
 		this.listaSpesaProdotto = listaSpesaProdotto;
 	}
-
-	public double prezziTotali (int idCatena, int id, double prezzo){
-		if(idCatena == id) {
-			return prezzo;
-		}
-		return 0;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "ListaSpesa [id=" + id + ", data=" + data + ", utente=" + utente  + "]";

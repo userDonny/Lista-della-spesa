@@ -5,7 +5,7 @@
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
         </a>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <a href ="categoria"> <img class="navbar-brand" src="immagini/navbar.png" width="60" height="60"> </a> 
+          <a href ="categoria"> <img src="immagini/navbar.png" width="80" height="80"> </a> 
           <li class="nav-item dropdown">
           <a class="nav-link px-2 dropdown-toggle link-body-emphasis ms-4 mt-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorie
