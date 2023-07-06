@@ -33,7 +33,7 @@ public class CategoriaServlet extends HttpServlet {
 		List<Categoria> categorie = categoriaRepository.findAll();
 		List<Prodotto> allProdotti = prodottoRepository.findAll();
 		request.setAttribute("allProdotti", allProdotti);
-		request.setAttribute("categorie", categorie);
+		request.getSession().setAttribute("categorie", categorie);
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 }

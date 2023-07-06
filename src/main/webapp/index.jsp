@@ -16,7 +16,8 @@
 	<%@ include file = "navbar.jsp" %>
 	<div class = "container">
     <div class="row">
-    	<c:forEach var="categoria" items="${requestScope.categorie}">
+    	<h1 style = "font-family: 'Sofia', sans-serif; background-color: rgb(235, 196, 113)" class = "text-center">CATEGORIE</h1>
+    	<c:forEach var="categoria" items="${sessionScope.categorie}">
       <div class="col-lg-2 mt-3">
       <a class = "card rounded btn btn-info navbar-brand" href="categoria?categoriaId=${categoria.id}">
          <img src="${categoria.linkFoto}" height ="120" width="150">

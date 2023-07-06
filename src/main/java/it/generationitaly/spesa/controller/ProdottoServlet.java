@@ -33,7 +33,6 @@ public class ProdottoServlet extends HttpServlet {
 			request.getRequestDispatcher("infoProdotto.jsp").forward(request, response);
 			return;
 		} else if (request.getParameter("idProdotto1") != null){
-			//if()
 			int idProdotto1 = Integer.parseInt(request.getParameter("idProdotto1"));
 			Prodotto prodotto = prodottoRepository.prodottoJoinCatenaProdottoJoinEtichetta(idProdotto1);
 			request.setAttribute("prodotto", prodotto);
