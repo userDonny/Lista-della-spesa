@@ -28,7 +28,8 @@ public class DeleteListaSpesaProdottoServlet extends HttpServlet {
 		ListaSpesa l = listaSpesaRepository.findById(idListaSpesa);
 		if (l.getListaSpesaProdotto().isEmpty()) {
 			listaSpesaRepository.deleteById(idListaSpesa);
+			response.sendRedirect("lista-spesa.jsp");
 		}
-		response.sendRedirect("lista-spesa");
+		response.sendRedirect("totali");
 	}
 }

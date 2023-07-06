@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="it.generationitaly.spesa.entity.ListaSpesa"%>
@@ -27,9 +28,6 @@
 	      <div class="col-md-5 col-sm-12"> <!-- Spazio per Card Prodotto -->
 	      <% SimpleDateFormat simpleDate = new SimpleDateFormat("dd/MM/yyyy"); %>
 	      <p>Data creazione: <b><%= simpleDate.format(listaSpesa.getData())%></b></p>
-	      	<form action="totali">
-        			<button class = "btn btn-primary" type="submit">Calcola totale</button>
-        	</form>
 	      <% for (ListaSpesaProdotto element :listaSpesa.getListaSpesaProdotto()) {%>
 	          <div class="card  border-0 mt-2">
 	          <div class="row"> <!-- Riga lughezza card -->
@@ -49,11 +47,12 @@
 	        <form method = "post" action="delete-lista-spesa-prodotto">
 	        	<input type="hidden" name = "idListaSpesa" value = "<%= listaSpesa.getId()%>">
 	        	<input type="hidden" name = "idListaSpesaProdotto" value = "<%= element.getId()%>">
-	        	<button class="btn btn-link link-secondary link-underline link-underline-opacity-0" type="submit"> Rimuovi</button>
-	        </form>
-	        <!--  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill= "#d80e0e" class="bi bi-x-square-fill ms-1 mb-1" viewBox="0 0 16 16">
+	        	<div class = "text-end">
+	        	<button class="btn border-danger btn-link link-secondary link-underline link-underline-opacity-0" type="submit"> <span style = "color: red">Rimuovi </span>
+	        	<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill= "#d80e0e" class="bi bi-x-square-fill ms-1 mb-1" viewBox="0 0 16 16">
   			<path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
-			</svg> -->
+			</svg></button></div>
+	        </form>
 	        <!--  
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-trash-fill" viewBox="0 0 16 16">
             <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
@@ -64,25 +63,32 @@
 	        <% } %>  
 	        </div>
 	        <div class="col-3" style="background-color:rgb(235, 196, 113)"> <!-- Spazio per Card Totale -->
-	        	<div class="card rounded text-center border-3 mt-2 sticky-top">
-	        	<h3 class="card-title" style = "color: green">Prezzo minore: <span class="card-text" style = "color: green; font-weight: 4; font-size:30px;">
-	        	<% if (catenaPrezzoMin != null) {%>
+	        	<div class = "sticky-top">
+	        	<div class="card rounded border-3 mt-2 ">
+	        	<h3 class="card-title ms-5" style = "color: green">Prezzo minore: <span class="card-text" style = "color: green; font-weight: 4; font-size:30px;"><br>
+	        	<% 	DecimalFormat df = new DecimalFormat ("0.00");
+	        		if (catenaPrezzoMin != null) {%>
 	        	<%= catenaPrezzoMin.getCatena().getDenominazione() %>
-	        	<%= catenaPrezzoMin.getPrezzoTotale() %>
+	        	<%= df.format(catenaPrezzoMin.getPrezzoTotale())%>
 	        	<%} %>
 	        	&#8364;</span></h3>
 	          		<!-- <p class="card-text" style = "font-weight: 4"> &#8364;</p> -->
 	        </div>
 	        <br>
 	        <br>
-	        <div style = "color : red">
+	        <div class="card rounded border-3 mt-2" style = "color : red">
+	        <h3 class = "card-title ms-5">
+	        	Alternative:<br><span class = "card-text" style = " font-weight: 4; font-size:30px;"> 
 	        	<% if (catenaPrezzoList != null) {
 	        		for(CatenaPrezzo cp : catenaPrezzoList) {%>
 	        	<%= cp.getCatena().getDenominazione() %>
-	        	<%= cp.getPrezzoTotale() %>
+	        	<%= df.format(cp.getPrezzoTotale())%>
 	        	<br>
 	        	<%} 
 	        	}%> 
+	        	</span>
+	        	</h3>
+	        </div>
 	        </div>               	
 	        </div> 
 	        <div class="col-2" style="background-color:#fefcec"></div>

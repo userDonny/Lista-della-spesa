@@ -200,6 +200,12 @@
         							<input type = "hidden" name = "id" value = "<%= prodotto.getId()%>">
         							<button class = "btn btn-primary" type="submit">Aggiungi alla lista</button>
         						</form> 
+        						<% String error = (String)request.getAttribute("errorQuantita"); 
+        							if(error != null) {%>
+        								<div class="alert alert-danger" role="alert">
+			  								Errore. Inserire una quantità maggiore di 0
+										</div>
+								<% } %>
 							</div>
 				<div class = "col-5 mt-5">
 							<table class="table border">

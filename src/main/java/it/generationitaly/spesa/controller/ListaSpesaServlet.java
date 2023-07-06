@@ -30,21 +30,14 @@ public class ListaSpesaServlet extends HttpServlet {
 	private UtenteRepository utenteRepository = UtenteRepositoryImpl.getInstance();
 	private ListaSpesaProdottoRepository listaSpesaProdottoRepository = ListaSpesaProdottoRepositoryImpl.getInstance();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		int idUtente = (int) request.getSession().getAttribute("idUtente");
-		Utente utente = utenteRepository.findById(idUtente);
-		ListaSpesa listaSpesa = listaSpesaRepository.findByUtente(utente);
-		if(listaSpesa != null) {
-		request.setAttribute("listaSpesa", listaSpesa);
-		request.getRequestDispatcher("lista-spesa.jsp").forward(request, response);
-		}
-	}
-
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int quantita = Integer.parseInt(request.getParameter("quantita"));
+		if (quantita <= 0) {
+			response.sendRedirect("prodotto?errorQuantita=" + true);
+			return;
+		}
 		int id = Integer.parseInt(request.getParameter("id"));
 		int idUtente = (int) request.getSession().getAttribute("idUtente");
 		Utente utente = utenteRepository.findById(idUtente);
@@ -76,7 +69,8 @@ public class ListaSpesaServlet extends HttpServlet {
 			listaSpesaProdottoRepository.save(listaSpesaProdotto);
 			}
 		}
-		request.setAttribute("listaSpesa", listaSpesa);
-		request.getRequestDispatcher("lista-spesa.jsp").forward(request, response);
+		//request.setAttribute("listaSpesa", listaSpesa);
+		//request.getRequestDispatcher("lista-spesa.jsp").forward(request, response);
+		response.sendRedirect("totali");
 	}
 }

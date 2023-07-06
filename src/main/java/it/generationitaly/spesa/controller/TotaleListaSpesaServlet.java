@@ -46,6 +46,7 @@ public class TotaleListaSpesaServlet extends HttpServlet {
 			}
 		}
 		CatenaPrezzo catenaPrezzoMin = cercaMin(catenaPrezzoList);
+		catenaPrezzoList.remove(catenaPrezzoMin);
 		request.setAttribute("catenaPrezzoMin", catenaPrezzoMin);
 		request.setAttribute("catenaPrezzoList", catenaPrezzoList);
 		request.setAttribute("listaSpesa", listaSpesa);
