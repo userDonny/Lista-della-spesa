@@ -11,7 +11,10 @@ CREATE TABLE utente (
 
 CREATE TABLE catena (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-	denominazione VARCHAR(45) UNIQUE NOT NULL
+	denominazione VARCHAR(45) UNIQUE NOT NULL,
+    link_foto varchar(4000),
+	descrizione varchar(4000),
+    link_sito varchar(4000)
 );
 
 CREATE TABLE categoria (

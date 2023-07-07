@@ -13,6 +13,16 @@
            </c:forEach>
           </ul>
         </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link px-2 dropdown-toggle link-body-emphasis ms-4 mt-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Catene convenzionate
+          </a>
+          <ul class="dropdown-menu">
+          <c:forEach var="catena" items = "${sessionScope.catene}">
+            <li><a class="dropdown-item" href="catene?catenaId=${catena.id}">${catena.denominazione}</a></li>
+           </c:forEach>
+          </ul>
+        </li>
         </ul>  
         <form method="get" action="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <input type="search" class="form-control" placeholder="Cerca prodotto" aria-label="Search" name="q">
