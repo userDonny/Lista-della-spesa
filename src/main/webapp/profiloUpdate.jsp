@@ -42,7 +42,9 @@
 				</form>
 				<c:choose>
 					<c:when test="${update != null}">
-						<h6 style = "color: red"> Acccount modificato correttamente</h6>
+						<div class="alert alert-success mt-2" role="alert">
+			  				Acccount modificato correttamente
+						</div>
 					</c:when>
 				</c:choose>
 				<form method = "post" action = "delete-utente" class = "mt-4">

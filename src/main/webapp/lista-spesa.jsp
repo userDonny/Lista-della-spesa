@@ -28,6 +28,7 @@
 	      <div class="col-md-5 col-sm-12"> <!-- Spazio per Card Prodotto -->
 	      <% SimpleDateFormat simpleDate = new SimpleDateFormat("dd/MM/yyyy"); %>
 	      <p>Data creazione: <b><%= simpleDate.format(listaSpesa.getData())%></b></p>
+	      <a class = "mt-2 btn btn-outline-info" href="categoria">Continua la spesa</a>
 	      <% for (ListaSpesaProdotto element :listaSpesa.getListaSpesaProdotto()) {%>
 	          <div class="card  border-0 mt-2">
 	          <div class="row"> <!-- Riga lughezza card -->
@@ -36,9 +37,9 @@
 	          </div>
 	          <div class="col-9"> <!-- colonna Corpo Card -->
 	          <div class="card-body"> <!-- Card body -->
-	          	<a class="stretched-link link-underline link-underline-opacity-0" href="prodotto?idProdotto1=<%= element.getProdotto().getId()%>"><span style="color:black"><span class = "ms-2" style="font-weight: 4; font-size:20px">Nome: <b><%= element.getProdotto().getNome()%> </b>
-	          	</span><br><span class = "ms-2" style="font-weight: 4; font-size:20px"> Marca: <b><%= element.getProdotto().getMarca()%> </b></span></span>
-	          	<br><span class = "ms-2" style="font-weight: 4; font-size:20px"> Quantità: <b><%= element.getQuantita()%> </b></span></span></a>
+	          	<a class="stretched-link link-underline link-underline-opacity-0" href="prodotto?idProdotto1=<%= element.getProdotto().getId()%>"><span style="color:black"><span class = "ms-4" style="font-weight: 4; font-size:20px">Nome: <b><%= element.getProdotto().getNome()%> </b>
+	          	</span><br><span class = "ms-4" style="font-weight: 4; font-size:20px"> Marca: <b><%= element.getProdotto().getMarca()%> </b></span></span>
+	          	<br><span class = "ms-4" style="font-weight: 4; font-size:20px"> Quantità: <b><%= element.getQuantita()%> </b></span></span></a>
 	          </div> <!-- Card body -->
 			 </div>
 	          	</div>
