@@ -2,7 +2,6 @@ package it.generationitaly.spesa.controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import it.generationitaly.spesa.entity.Catena;
 import it.generationitaly.spesa.repository.CatenaRepository;
 import it.generationitaly.spesa.repository.impl.CatenaRepositoryImpl;
@@ -27,8 +26,10 @@ public class CatenaServlet extends HttpServlet {
 			request.setAttribute("catena", catena);
 			request.getRequestDispatcher("catene.jsp").forward(request, response);
 			return;
-			}
-
 		}
+		List<Catena> catene = catenaRepository.findAll();
+		request.getSession().setAttribute("catene", catene);
+		request.getRequestDispatcher("navbar.jsp").forward(request, response);
 	}
+}
 

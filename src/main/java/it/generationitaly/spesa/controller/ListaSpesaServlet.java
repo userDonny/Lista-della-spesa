@@ -34,10 +34,6 @@ public class ListaSpesaServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int quantita = Integer.parseInt(request.getParameter("quantita"));
-		if (quantita <= 0) {
-			response.sendRedirect("prodotto?errorQuantita=" + true);
-			return;
-		}
 		int id = Integer.parseInt(request.getParameter("id"));
 		int idUtente = (int) request.getSession().getAttribute("idUtente");
 		Utente utente = utenteRepository.findById(idUtente);
@@ -69,8 +65,6 @@ public class ListaSpesaServlet extends HttpServlet {
 			listaSpesaProdottoRepository.save(listaSpesaProdotto);
 			}
 		}
-		//request.setAttribute("listaSpesa", listaSpesa);
-		//request.getRequestDispatcher("lista-spesa.jsp").forward(request, response);
 		response.sendRedirect("totali");
 	}
 }

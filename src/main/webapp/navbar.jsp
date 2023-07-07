@@ -1,3 +1,6 @@
+<%@page import="it.generationitaly.spesa.entity.Categoria"%>
+<%@page import="it.generationitaly.spesa.entity.Catena"%>
+<%@page import="java.util.List"%>
 <header class="p-3 mb-3 border-bottom" style = "background-color: rgb(235, 196, 113)">
     <div class="container-fluid">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -8,9 +11,10 @@
             Categorie
           </a>
           <ul class="dropdown-menu">
-          <c:forEach var="categoria" items = "${sessionScope.categorie}">
-            <li><a class="dropdown-item" href="categoria?categoriaId=${categoria.id}">${categoria.nome}</a></li>
-           </c:forEach>
+          <% List<Categoria> categorie = (List<Categoria>) request.getSession().getAttribute("categorie"); 
+             for (Categoria categoria : categorie) {%>
+            <li><a class="dropdown-item" href="categoria?categoriaId=<%= categoria.getId()%>"><%= categoria.getNome()%></a></li>
+           <%} %>
           </ul>
         </li>
          <li class="nav-item dropdown">
@@ -18,9 +22,10 @@
             Catene convenzionate
           </a>
           <ul class="dropdown-menu">
-          <c:forEach var="catena" items = "${sessionScope.catene}">
-            <li><a class="dropdown-item" href="catene?catenaId=${catena.id}">${catena.denominazione}</a></li>
-           </c:forEach>
+          <% List<Catena> catene = (List<Catena>) request.getSession().getAttribute("catene"); 
+             for (Catena catena : catene) {%>
+            <li><a class="dropdown-item" href="catena?catenaId=<%= catena.getId()%>"><%= catena.getDenominazione()%></a></li>
+           <%} %>
           </ul>
         </li>
         </ul>  

@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@page import="it.generationitaly.spesa.entity.Prodotto"%>
 <%@page import="it.generationitaly.spesa.entity.CatenaProdotto"%>
-<%@page import="it.generationitaly.spesa.entity.Categoria"%>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -214,6 +213,7 @@
 							<table class="table border">
 								<thead>
 									<tr>
+										<th></th>
 										<th>CATENA</th>
 										<th>PREZZO</th>
 									</tr>
@@ -221,7 +221,8 @@
 								<tbody>
 									<% for(CatenaProdotto p : prodotto.getCatenaProdotto()) { %>
 										<tr>
-											<td><%= p.getCatena().getDenominazione() %></td>
+											<td><img src="<%= p.getCatena().getLinkFoto() %>" height="50" width = "90"></td> 
+											<td><a href="catene?catenaId=<%= p.getCatena().getId()%>"><%= p.getCatena().getDenominazione()%></a></td>
 											<td><%= p.getPrezzo()+ " €"%></td>
 										</tr>
 									<%} %>

@@ -33,6 +33,10 @@ public class TotaleListaSpesaServlet extends HttpServlet {
 		int idUtente = (int) request.getSession().getAttribute("idUtente");
 		Utente utente = utenteRepository.findById(idUtente);
 		ListaSpesa listaSpesa = listaSpesaRepository.findByUtente(utente);
+		if(listaSpesa == null) {
+			response.sendRedirect("categoria");
+			return;
+		}
 		List<CatenaPrezzo> catenaPrezzoList = new ArrayList<CatenaPrezzo>();
 		for (ListaSpesaProdotto listaSpesaProdotto : listaSpesa.getListaSpesaProdotto()) {
 			Prodotto prodotto = listaSpesaProdotto.getProdotto();

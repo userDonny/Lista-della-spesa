@@ -14,18 +14,14 @@
   <%@ include file = "navbar.jsp" %>
     <div class="container">
       <div class="row">
-      <c:forEach var="catena" items="${catene}">
-        <div class="col-3">
-          <a class="card rounded btn border-3" href="catene?catenaId1=${catena.id}">
-          <img class = "mx-auto" src="${catena.linkFoto}" height= "225" width = "225">
-          	<p>${catena.denominazione}</p>
-          		 <p style = "font-weight: 4">${catena.descrizione}</p>       	
+        <div class="col-8 mx-auto">
+          <img src="${catena.linkFoto}" height= "300" width = "500">
+          		 <p class = "mt-2" style = "font-weight: 4">${catena.descrizione}</p>
+          		 <h5 class = "mt-2" >Visita il sito web: <a href="${catena.linkSito}">${catena.denominazione}</a></h5>       	
           	</a>
            </div>
-        </c:forEach>
         </div>          
      </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
