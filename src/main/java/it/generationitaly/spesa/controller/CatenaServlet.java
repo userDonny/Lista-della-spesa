@@ -3,7 +3,6 @@ package it.generationitaly.spesa.controller;
 import java.io.IOException;
 import java.util.List;
 
-import it.generationitaly.app.entity.Banca;
 import it.generationitaly.spesa.entity.Catena;
 import it.generationitaly.spesa.repository.CatenaRepository;
 import it.generationitaly.spesa.repository.impl.CatenaRepositoryImpl;
