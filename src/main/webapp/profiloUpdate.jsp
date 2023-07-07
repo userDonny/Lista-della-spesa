@@ -31,22 +31,15 @@
 						class="form-control"> <label for="sesso">SESSO</label> <input
 						type="text" id="sesso" name="sesso" placeholder="${profilo.sesso}"
 						readonly="readonly" class="form-control"> <label
-						for="email">E-MAIL</label> <input type="email" id="email"
+						for="email">E-MAIL *</label> <input type="email" id="email"
 						name="email" value="${profilo.email }" class="form-control">
-					<label for="username">USERNAME</label> <input type="text"
+					<label for="username">USERNAME *</label> <input type="text"
 						id="username" name="username" value="${profilo.username}"
-						class="form-control"> <label for="password">PASSWORD</label>
+						class="form-control"> <label for="password">PASSWORD *</label>
 					<input type="password" id="password" name="password"
 						value="${profilo.password}" class="form-control">					
 					<button class = "btn btn-primary mt-3" type="submit">MODIFICA</button>
 				</form>
-				<c:choose>
-					<c:when test="${update != null}">
-						<div class="alert alert-success mt-2" role="alert">
-			  				Acccount modificato correttamente
-						</div>
-					</c:when>
-				</c:choose>
 				<form method = "post" action = "delete-utente" class = "mt-4">
 				<button class = "btn btn-danger" type = "submit"> ELIMINA ACCOUNT</button>
 				</form>

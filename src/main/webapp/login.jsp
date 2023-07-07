@@ -114,6 +114,13 @@
 			  Credenziali errate!
 			</div>
 		</c:if>
+		<c:choose>
+			<c:when test="${update != null}">
+				<div class="alert alert-success mt-2" role="alert">
+			  		Acccount modificato correttamente
+				</div>
+			</c:when>
+		</c:choose>
 		<a href="form-crea-account.jsp">Crea account</a>
 	</main>
 </body>

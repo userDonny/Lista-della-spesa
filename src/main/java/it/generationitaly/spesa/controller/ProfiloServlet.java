@@ -37,6 +37,6 @@ public class ProfiloServlet extends HttpServlet {
 		utente.setEmail(email);
 		ur.update(utente);
 		request.setAttribute("update", true);
-		request.getRequestDispatcher("profiloUpdate.jsp").forward(request, response);
+		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
 }

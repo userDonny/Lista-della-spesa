@@ -30,17 +30,11 @@
           	</a>
            </div>
         </c:forEach>
+        <c:if test="${prodotti.isEmpty()}">
+        	<h4 style = "color: red">Nessun risultato secondo la ricerca effettuata</h4>
+        </c:if>
         </div>          
      </div>
-<!-- <footer class="text-body-secondary py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="prodotti.jsp">Torna su</a>
-    </p>
-    <p class="mb-1">&copy; List&lt;Prodotto&gt;</p>
-    <p class="mb-0">Torna alla home <a href="index.jsp">qui</a>.</p>
-  </div>
-</footer>  -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
