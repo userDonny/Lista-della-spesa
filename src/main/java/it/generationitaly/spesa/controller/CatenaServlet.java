@@ -28,8 +28,8 @@ public class CatenaServlet extends HttpServlet {
 			return;
 		}
 		List<Catena> catene = catenaRepository.findAll();
-		request.getSession().setAttribute("catene", catene);
-		request.getRequestDispatcher("navbar.jsp").forward(request, response);
+		request.setAttribute("catene", catene);
+		request.getRequestDispatcher("all-catene.jsp").forward(request, response);
 	}
 }
 
