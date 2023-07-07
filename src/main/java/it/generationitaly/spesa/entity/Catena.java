@@ -21,6 +21,15 @@ public class Catena {
 	@Column(name = "denominazione", length = 45, unique = true, nullable = false)
 	private String denominazione;
 
+	@Column(name = "link_foto", length = 4000)
+	private String linkFoto;
+
+	@Column(name = "descrizione", length = 4000)
+	private String descrizione;
+
+	@Column(name = "link_sito", length = 4000)
+	private String linkSito;
+
 	@OneToMany(mappedBy = "catena")
 	private List<CatenaProdotto> catenaProdotto = new ArrayList<CatenaProdotto>();
 
@@ -48,8 +57,34 @@ public class Catena {
 		this.catenaProdotto = catenaProdotto;
 	}
 
+	public String getLinkFoto() {
+		return linkFoto;
+	}
+
+	public void setLinkFoto(String linkFoto) {
+		this.linkFoto = linkFoto;
+	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}
+
+	public String getLinkSito() {
+		return linkSito;
+	}
+
+	public void setLinkSito(String linkSito) {
+		this.linkSito = linkSito;
+	}
+
 	@Override
 	public String toString() {
-		return "Catena [id=" + id + ", denominazione=" + denominazione + ", catenaProdotto=" + catenaProdotto + "]";
+		return "Catena [id=" + id + ", denominazione=" + denominazione + ", linkFoto=" + linkFoto + ", descrizione="
+				+ descrizione + ", linkSito=" + linkSito + "]";
 	}
+
 }
