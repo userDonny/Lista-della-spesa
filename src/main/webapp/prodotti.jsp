@@ -31,7 +31,7 @@
            </div>
         </c:forEach>
         <c:if test="${prodotti.isEmpty()}">
-        	<h4 style = "color: red">Nessun risultato secondo la ricerca effettuata</h4>
+        	<h4 style = "color: red">Il termine inserito non ha generato nessun risultato.</h4>
         </c:if>
         </div>          
      </div>
