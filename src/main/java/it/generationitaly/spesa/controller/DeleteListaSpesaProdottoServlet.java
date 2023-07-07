@@ -25,11 +25,12 @@ public class DeleteListaSpesaProdottoServlet extends HttpServlet {
 		int idListaSpesaProdotto = Integer.parseInt(request.getParameter("idListaSpesaProdotto"));
 		listaSpesaProdottoRepository.deleteById(idListaSpesaProdotto);
 		int idListaSpesa = Integer.parseInt(request.getParameter("idListaSpesa"));
+		String responsePage = "totali";
 		ListaSpesa l = listaSpesaRepository.findById(idListaSpesa);
 		if (l.getListaSpesaProdotto().isEmpty()) {
 			listaSpesaRepository.deleteById(idListaSpesa);
-			response.sendRedirect("lista-spesa.jsp");
+			responsePage = "categoria";
 		}
-		response.sendRedirect("totali");
+		response.sendRedirect(responsePage);
 	}
 }

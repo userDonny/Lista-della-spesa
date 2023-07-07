@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import="it.generationitaly.spesa.entity.Prodotto"%>
 <%@page import="it.generationitaly.spesa.entity.CatenaProdotto"%>
+<%@page import="it.generationitaly.spesa.entity.Categoria"%>
 <%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,31 +46,31 @@
 								<tbody>
 									<tr>
 										<th>VALORE ENERGETICO</th>
-										<td><%= prodotti.get(0).getEtichetta().getValoreEnergetico()%></td>
+										<td><%= prodotti.get(0).getEtichetta().getValoreEnergetico() + " Kcal"%></td>
 									</tr>
 									<tr>
 										<th>PROTEINE</th>
-										<td><%= prodotti.get(0).getEtichetta().getProteine()%></td>
+										<td><%= prodotti.get(0).getEtichetta().getProteine() + " g"%></td>
 									</tr>
 									<tr>
 										<th>CARBOIDRATI</th>
-										<td><%= prodotti.get(0).getEtichetta().getCarboidrati()%></td>
+										<td><%= prodotti.get(0).getEtichetta().getCarboidrati() + " g"%></td>
 									</tr>
 									<tr>
 										<th>GRASSI</th>
-										<td><%= prodotti.get(0).getEtichetta().getGrassi()%></td>
+										<td><%= prodotti.get(0).getEtichetta().getGrassi() + " g"%></td>
 									</tr>
 									<tr>
 										<th>GRASSI SATURI</th>
-										<td><%= prodotti.get(0).getEtichetta().getGrassiSaturi()%></td>
+										<td><%= prodotti.get(0).getEtichetta().getGrassiSaturi() + " g"%></td>
 									</tr>
 									<tr>
 										<th>FIBRE</th>
-										<td><%= prodotti.get(0).getEtichetta().getFibre()%></td>
+										<td><%= prodotti.get(0).getEtichetta().getFibre() + " g"%></td>
 									</tr>
 									<tr>
 										<th>SODIO</th>
-										<td><%= prodotti.get(0).getEtichetta().getSodio()%></td>
+										<td><%= prodotti.get(0).getEtichetta().getSodio() + " g"%></td>
 
 									</tr>
 								</tbody>
@@ -80,31 +81,31 @@
 								<tbody>
 									<tr>
 										<th>VALORE ENERGETICO</th>
-										<td><%= prodotti.get(1).getEtichetta().getValoreEnergetico()%></td>
+										<td><%= prodotti.get(1).getEtichetta().getValoreEnergetico() + " Kcal"%></td>
 									</tr>
 									<tr>
 										<th>PROTEINE</th>
-										<td><%= prodotti.get(1).getEtichetta().getProteine()%></td>
+										<td><%= prodotti.get(1).getEtichetta().getProteine()  + " g"%></td>
 									</tr>
 									<tr>
 										<th>CARBOIDRATI</th>
-										<td><%= prodotti.get(1).getEtichetta().getCarboidrati()%></td>
+										<td><%= prodotti.get(1).getEtichetta().getCarboidrati() + " g"%></td>
 									</tr>
 									<tr>
 										<th>GRASSI</th>
-										<td><%= prodotti.get(1).getEtichetta().getGrassi()%></td>
+										<td><%= prodotti.get(1).getEtichetta().getGrassi() + " g"%></td>
 									</tr>
 									<tr>
 										<th>GRASSI SATURI</th>
-										<td><%= prodotti.get(1).getEtichetta().getGrassiSaturi()%></td>
+										<td><%= prodotti.get(1).getEtichetta().getGrassiSaturi() + " g"%></td>
 									</tr>
 									<tr>
 										<th>FIBRE</th>
-										<td><%= prodotti.get(1).getEtichetta().getFibre()%></td>
+										<td><%= prodotti.get(1).getEtichetta().getFibre() + " g"%></td>
 									</tr>
 									<tr>
 										<th>SODIO</th>
-										<td><%= prodotti.get(1).getEtichetta().getSodio()%></td>
+										<td><%= prodotti.get(1).getEtichetta().getSodio() + " g"%></td>
 									</tr>
 								</tbody>
 							</table>
@@ -124,7 +125,7 @@
 									<% for(CatenaProdotto p : prodotti.get(0).getCatenaProdotto()) { %>
 										<tr>
 											<td><%= p.getCatena().getDenominazione() %></td>
-											<td><%= p.getPrezzo() %></td>
+											<td><%= p.getPrezzo() + " €"%></td>
 										</tr>
 									<%} %>
 								</tbody>
@@ -142,7 +143,7 @@
 									<% for(CatenaProdotto p1 : prodotti.get(1).getCatenaProdotto()) { %>
 										<tr>
 											<td><%= p1.getCatena().getDenominazione() %></td>
-											<td><%= p1.getPrezzo() %></td>
+											<td><%= p1.getPrezzo() + " €"%></td>
 										</tr>
 									<% } %>
 								</tbody>
@@ -161,31 +162,31 @@
 								<tbody>
 									<tr>
 										<th>VALORE ENERGETICO</th>
-										<td><%= prodotto.getEtichetta().getValoreEnergetico()%></td>
+										<td><%= prodotto.getEtichetta().getValoreEnergetico() + " Kcal"%></td>
 									</tr>
 									<tr>
 										<th>PROTEINE</th>
-										<td><%= prodotto.getEtichetta().getProteine()%></td>
+										<td><%= prodotto.getEtichetta().getProteine() + " g"%></td>
 									</tr>
 									<tr>
 										<th>CARBOIDRATI</th>
-										<td><%= prodotto.getEtichetta().getCarboidrati()%></td>
+										<td><%= prodotto.getEtichetta().getCarboidrati() + " g"%></td>
 									</tr>
 									<tr>
 										<th>GRASSI</th>
-										<td><%= prodotto.getEtichetta().getGrassi()%></td>
+										<td><%= prodotto.getEtichetta().getGrassi() + " g"%></td>
 									</tr>
 									<tr>
 										<th>GRASSI SATURI</th>
-										<td><%= prodotto.getEtichetta().getGrassiSaturi()%></td>
+										<td><%= prodotto.getEtichetta().getGrassiSaturi() + " g"%></td>
 									</tr>
 									<tr>
 										<th>FIBRE</th>
-										<td><%= prodotto.getEtichetta().getFibre()%></td>
+										<td><%= prodotto.getEtichetta().getFibre() + " g"%></td>
 									</tr>
 									<tr>
 										<th>SODIO</th>
-										<td><%= prodotto.getEtichetta().getSodio()%></td>
+										<td><%= prodotto.getEtichetta().getSodio() + " g"%></td>
 
 									</tr>
 								</tbody>
@@ -193,23 +194,21 @@
 							</div>
 			</div>
 			<div class = "row">
-			<div class = "col-5 mt-5">
+			<div class = "col-5 mt-3">
 								<form method="get" action="prodotto" role="search">
+										<h5>Confronta:</h5>
           								<input type="search" class="form-control" placeholder="Confronta con..." aria-label="Search" name="searchTerm">
           								<input type = "hidden" name = "idProdotto1" value = "<%= prodotto.getId()%>">
         						</form>
         						 <form class = "mt-5" method = "post" action="lista-spesa">
+        						 	<h5>Aggiungi alla lista della spesa:</h5>
         						 	<label for = "formQuantità">Quantità</label> <br>			 	
-        							<input class = "" id = "formQuantità" type= "number" value = "1" name = "quantita" placeholder="quantità">
+        							<input class = "form border rounded" id = "formQuantità" type= "number" value = "1" name = "quantita" placeholder="quantità" min = "1" max = "100">
         							<input type = "hidden" name = "id" value = "<%= prodotto.getId()%>">
-        							<button class = "btn btn-primary" type="submit">Aggiungi alla lista</button>
+        							<button class = "btn btn-primary ms-2" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+  										<path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+									</svg></button>
         						</form> 
-        						<% String error = (String)request.getAttribute("errorQuantita"); 
-        							if(error != null) {%>
-        								<div class="alert alert-danger" role="alert">
-			  								Errore. Inserire una quantità maggiore di 0
-										</div>
-								<% } %>
 							</div>
 				<div class = "col-5 mt-5">
 							<table class="table border">
@@ -223,7 +222,7 @@
 									<% for(CatenaProdotto p : prodotto.getCatenaProdotto()) { %>
 										<tr>
 											<td><%= p.getCatena().getDenominazione() %></td>
-											<td><%= p.getPrezzo() %></td>
+											<td><%= p.getPrezzo()+ " €"%></td>
 										</tr>
 									<%} %>
 								</tbody>
