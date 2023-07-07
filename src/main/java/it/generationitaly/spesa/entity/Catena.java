@@ -20,17 +20,15 @@ public class Catena {
 
 	@Column(name = "denominazione", length = 45, unique = true, nullable = false)
 	private String denominazione;
-	
+
 	@Column(name = "link_foto", length = 4000)
 	private String linkFoto;
-	
+
 	@Column(name = "descrizione", length = 4000)
 	private String descrizione;
-	
+
 	@Column(name = "link_sito", length = 4000)
 	private String linkSito;
-	
-	
 
 	@OneToMany(mappedBy = "catena")
 	private List<CatenaProdotto> catenaProdotto = new ArrayList<CatenaProdotto>();
@@ -89,7 +87,4 @@ public class Catena {
 				+ descrizione + ", linkSito=" + linkSito + "]";
 	}
 
-	
-
-	
 }

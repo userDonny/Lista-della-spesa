@@ -25,14 +25,9 @@ public class CatenaServlet extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("catenaId"));
 			Catena catena = catenaRepository.findById(id);
 			request.setAttribute("catena", catena);
-			request.getRequestDispatcher("catena.jsp").forward(request, response);
+			request.getRequestDispatcher("catene.jsp").forward(request, response);
 			return;
 			}
-			
-			List<Catena> catene = catenaRepository.findAll();
-			request.setAttribute("catene", catene);
-			
-			request.getRequestDispatcher("catene.jsp").forward(request, response);
 
 		}
 	}
