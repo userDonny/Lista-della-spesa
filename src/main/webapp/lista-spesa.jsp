@@ -66,11 +66,11 @@
 	        <div class="col-3" style="background-color:rgb(235, 196, 113)"> <!-- Spazio per Card Totale -->
 	        	<div class = "sticky-top">
 	        	<div class="card rounded border-3 mt-2 ">
-	        	<h3 class="card-title ms-5" style = "color: green">Prezzo minore: <span class="card-text" style = "color: green; font-weight: 4; font-size:30px;"><br>
+	        	<h3 class="card-title ms-5" style = "color: green">Prezzo minore <span class="card-text" style = "color: green; font-weight: 4; font-size:30px;"><br>
 	        	<% 	DecimalFormat df = new DecimalFormat ("0.00");
 	        		if (catenaPrezzoMin != null) {%>
-	        	<%= catenaPrezzoMin.getCatena().getDenominazione() %>
-	        	<%= df.format(catenaPrezzoMin.getPrezzoTotale()) + "€"%>
+	        	<%= catenaPrezzoMin.getCatena().getDenominazione() + " :"%>
+	        	<%= df.format(catenaPrezzoMin.getPrezzoTotale()) + " €"%>
 	        	<%} %>
 	        	</span></h3>
 	          		<!-- <p class="card-text" style = "font-weight: 4"> &#8364;</p> -->
@@ -79,11 +79,11 @@
 	        <br>
 	        <div class="card rounded border-3 mt-2" style = "color : red">
 	        <h3 class = "card-title ms-5">
-	        	Alternative:<br><span class = "card-text" style = " font-weight: 4; font-size:30px;"> 
+	        	Alternative<br><span class = "card-text" style = " font-weight: 4; font-size:30px;"> 
 	        	<% if (catenaPrezzoList != null) {
 	        		for(CatenaPrezzo cp : catenaPrezzoList) {%>
-	        	<%= cp.getCatena().getDenominazione() %>
-	        	<%= df.format(cp.getPrezzoTotale()) + "€"%>
+	        	<%= cp.getCatena().getDenominazione() + " :"%>
+	        	<%= df.format(cp.getPrezzoTotale()) + " €"%>
 	        	<br>
 	        	<%} 
 	        	}%> 
