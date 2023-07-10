@@ -26,20 +26,23 @@ public class ProdottoServlet extends HttpServlet {
 			Prodotto prodotto = prodottoRepository.prodottoJoinCatenaProdottoJoinEtichetta(idProdotto1);
 			String searchTerm = request.getParameter("searchTerm");
 			Prodotto prodotto2 = prodottoRepository.searchByNome(searchTerm);
-			prodotto2 = prodottoRepository.prodottoJoinCatenaProdottoJoinEtichetta(prodotto2.getId());
-			List<Prodotto> prodotti = new ArrayList<Prodotto>();
-			prodotti.add(prodotto);
-			prodotti.add(prodotto2);
+			if (prodotto2 != null) {
+				prodotto2 = prodottoRepository.prodottoJoinCatenaProdottoJoinEtichetta(prodotto2.getId());
+				List<Prodotto> prodotti = new ArrayList<Prodotto>();
+				prodotti.add(prodotto);
+				prodotti.add(prodotto2);
+				request.setAttribute("prodotti", prodotti);
+				request.getRequestDispatcher("infoProdotto.jsp").forward(request, response);
+				return;
+			}
 			if ((prodotto2.getCategoria().getId() != prodotto.getCategoria().getId())) {
 				request.setAttribute("errorConfronto", 1);
 				request.setAttribute("prodotto", prodotto);
 				request.getRequestDispatcher("infoProdotto.jsp").forward(request, response);
 				return;
-				
+
 			} else {
-				request.setAttribute("prodotti", prodotti);
-				request.getRequestDispatcher("infoProdotto.jsp").forward(request, response);
-				return;
+				
 			}
 		} else if (request.getParameter("idProdotto1") != null) {
 			int idProdotto1 = Integer.parseInt(request.getParameter("idProdotto1"));

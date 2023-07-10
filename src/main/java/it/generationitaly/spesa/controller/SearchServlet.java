@@ -20,8 +20,12 @@ public class SearchServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String q = request.getParameter("q");
-		List<Prodotto> prodotti = prodottoRepository.searchByNomeOrSearchByMarca(q);
-		request.setAttribute("prodotti", prodotti);
-		request.getRequestDispatcher("prodotti.jsp").forward(request, response);
+		if (q != null &&!q.isEmpty()) {
+			List<Prodotto> prodotti = prodottoRepository.searchByNomeOrSearchByMarca(q);
+			request.setAttribute("prodotti", prodotti);
+			request.getRequestDispatcher("prodotti.jsp").forward(request, response);
+			return;
+		} 
+		response.sendRedirect("categoria");
 	}
 }

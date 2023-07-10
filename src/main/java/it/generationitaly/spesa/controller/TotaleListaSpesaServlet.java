@@ -2,6 +2,7 @@ package it.generationitaly.spesa.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import it.generationitaly.spesa.entity.Catena;
@@ -51,6 +52,12 @@ public class TotaleListaSpesaServlet extends HttpServlet {
 		}
 		CatenaPrezzo catenaPrezzoMin = cercaMin(catenaPrezzoList);
 		catenaPrezzoList.remove(catenaPrezzoMin);
+		catenaPrezzoList.sort(new Comparator<CatenaPrezzo>() {
+			@Override
+			public int compare(CatenaPrezzo o1, CatenaPrezzo o2) {
+				return Double.valueOf(o1.getPrezzoTotale()).compareTo(o2.getPrezzoTotale());
+			}
+		});
 		request.setAttribute("catenaPrezzoMin", catenaPrezzoMin);
 		request.setAttribute("catenaPrezzoList", catenaPrezzoList);
 		request.setAttribute("listaSpesa", listaSpesa);

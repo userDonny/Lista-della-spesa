@@ -72,8 +72,7 @@
 	<div class="col-6 mb-2">
 	<a href = "catene?catenaId=${catena.id}" class = "card rounded btn">
 	<img class = "mx-auto" src="${catena.linkFoto}" height="200" width = "300">
-		<p>${catena.denominazione}</p>
-		<h4>Scopri di più</h4>
+		<h4 class = "mt-2">Scopri di più</h4>
 		</a>
 		</div>
 	</c:forEach>	
