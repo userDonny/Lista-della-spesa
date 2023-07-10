@@ -1,6 +1,6 @@
 <%@page import="java.text.DecimalFormat"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="it.generationitaly.spesa.entity.ListaSpesa"%>
 <%@page import="it.generationitaly.spesa.entity.ListaSpesaProdotto"%>
 <%@page import="it.generationitaly.spesa.entity.CatenaPrezzo"%>
@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="ISO-8859-1">
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>List&lt;Prodotto&gt; - Lista della Spesa</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
@@ -39,7 +39,7 @@
 	          <div class="card-body"> <!-- Card body -->
 	          	<a class="stretched-link link-underline link-underline-opacity-0" href="prodotto?idProdotto1=<%= element.getProdotto().getId()%>"><span style="color:black"><span class = "ms-4" style="font-weight: 4; font-size:20px">Nome: <b><%= element.getProdotto().getNome()%> </b>
 	          	</span><br><span class = "ms-4" style="font-weight: 4; font-size:20px"> Marca: <b><%= element.getProdotto().getMarca()%> </b></span></span>
-	          	<br><span class = "ms-4" style="font-weight: 4; font-size:20px"> Quantit�: <b><%= element.getQuantita()%> </b></span></span></a>
+	          	<br><span class = "ms-4" style="font-weight: 4; font-size:20px"> Quantità: <b><%= element.getQuantita()%> </b></span></span></a>
 	          </div> <!-- Card body -->
 			 </div>
 	          	</div>
@@ -70,9 +70,9 @@
 	        	<% 	DecimalFormat df = new DecimalFormat ("0.00");
 	        		if (catenaPrezzoMin != null) {%>
 	        	<%= catenaPrezzoMin.getCatena().getDenominazione() %>
-	        	<%= df.format(catenaPrezzoMin.getPrezzoTotale())%>
+	        	<%= df.format(catenaPrezzoMin.getPrezzoTotale()) + "€"%>
 	        	<%} %>
-	        	&#8364;</span></h3>
+	        	</span></h3>
 	          		<!-- <p class="card-text" style = "font-weight: 4"> &#8364;</p> -->
 	        </div>
 	        <br>
@@ -83,7 +83,7 @@
 	        	<% if (catenaPrezzoList != null) {
 	        		for(CatenaPrezzo cp : catenaPrezzoList) {%>
 	        	<%= cp.getCatena().getDenominazione() %>
-	        	<%= df.format(cp.getPrezzoTotale())%>
+	        	<%= df.format(cp.getPrezzoTotale()) + "€"%>
 	        	<br>
 	        	<%} 
 	        	}%> 

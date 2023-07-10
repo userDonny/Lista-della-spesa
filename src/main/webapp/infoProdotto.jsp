@@ -201,7 +201,12 @@
         						</form>
         						<% if( request.getAttribute("errorConfronto") != null) {%>
 			 						<div class="alert alert-danger" role="alert">
-			 							Inserire un prodotto della stessa categoria.
+			 							Inserire un prodotto appartenente alla stessa categoria.
+									</div>
+								<% } %>
+								<% if( request.getAttribute("error2") != null) {%>
+			 						<div class="alert alert-danger" role="alert">
+			 							Prodotto inesistente.
 									</div>
 								<% } %>
         						 <form class = "mt-5" method = "post" action="lista-spesa">
