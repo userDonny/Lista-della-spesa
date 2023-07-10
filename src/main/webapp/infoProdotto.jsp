@@ -199,6 +199,11 @@
           								<input type="search" class="form-control" placeholder="Confronta con..." aria-label="Search" name="searchTerm">
           								<input type = "hidden" name = "idProdotto1" value = "<%= prodotto.getId()%>">
         						</form>
+        						<% if( request.getAttribute("errorConfronto") != null) {%>
+			 						<div class="alert alert-danger" role="alert">
+			 							Inserire un prodotto della stessa categoria.
+									</div>
+								<% } %>
         						 <form class = "mt-5" method = "post" action="lista-spesa">
         						 	<h5>Aggiungi alla lista della spesa:</h5>
         						 	<label for = "formQuantità">Quantità</label> <br>			 	

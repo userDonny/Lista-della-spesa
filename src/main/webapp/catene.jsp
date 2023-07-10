@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-8 mx-auto">
-          <img src="${catena.linkFoto}" height= "300" width = "500">
+          <img src="${catena.linkFoto}" height= "300" width = "700">
           		 <p class = "mt-2" style = "font-weight: 4">${catena.descrizione}</p>
           		 <h5 class = "mt-2" >Visita il sito web: <a href="${catena.linkSito}">${catena.denominazione}</a></h5>       	
           	</a>

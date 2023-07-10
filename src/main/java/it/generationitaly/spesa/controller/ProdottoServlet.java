@@ -30,12 +30,14 @@ public class ProdottoServlet extends HttpServlet {
 			List<Prodotto> prodotti = new ArrayList<Prodotto>();
 			prodotti.add(prodotto);
 			prodotti.add(prodotto2);
-			if (prodotto2.getCategoria().getId() == prodotto.getCategoria().getId()) {
-				request.setAttribute("prodotti", prodotti);
+			if ((prodotto2.getCategoria().getId() != prodotto.getCategoria().getId())) {
+				request.setAttribute("errorConfronto", 1);
+				request.setAttribute("prodotto", prodotto);
 				request.getRequestDispatcher("infoProdotto.jsp").forward(request, response);
 				return;
+				
 			} else {
-				request.setAttribute("prodotto", prodotto);
+				request.setAttribute("prodotti", prodotti);
 				request.getRequestDispatcher("infoProdotto.jsp").forward(request, response);
 				return;
 			}
