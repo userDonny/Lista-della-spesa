@@ -110,7 +110,7 @@
 			<button class="w-100 btn btn-lg btn-primary" type="submit"> Accedi</button>
 		</form>
 		<c:if test="${error != null}">
-			 <div class="alert alert-danger" role="alert">
+			 <div class="alert alert-danger mt-2" role="alert">
 			  Credenziali errate!
 			</div>
 		</c:if>

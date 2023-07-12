@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="navbar.css" rel="stylesheet">
+<link href="animation.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <title>Insert title here</title>
@@ -19,7 +19,7 @@
     	<h1 style = "font-family: 'Sofia', sans-serif; background-color: rgb(235, 196, 113)" class = "text-center">CATEGORIE</h1>
     	<c:forEach var="categoria" items="${sessionScope.categorie}">
       <div class="col-lg-2 mt-3">
-      <a class = "card rounded btn btn-info navbar-brand" href="categoria?categoriaId=${categoria.id}">
+      <a class = "card rounded btn btn-info animation" href="categoria?categoriaId=${categoria.id}">
          <img src="${categoria.linkFoto}" height ="120" width="150">
         <h6 class = "mt-1"> ${categoria.nome}</h6>
         </a>

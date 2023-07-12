@@ -44,31 +44,35 @@
 							<table class="table border">
 								<tbody>
 									<tr>
-										<th>VALORE ENERGETICO</th>
+										<th>VALORI NUTRIZIONALI</th>
+										<th>PER 100 g</th>
+									</tr>
+									<tr>
+										<td>VALORE ENERGETICO</td>
 										<td><%= prodotti.get(0).getEtichetta().getValoreEnergetico() + " Kcal"%></td>
 									</tr>
 									<tr>
-										<th>PROTEINE</th>
+										<td>PROTEINE</td>
 										<td><%= prodotti.get(0).getEtichetta().getProteine() + " g"%></td>
 									</tr>
 									<tr>
-										<th>CARBOIDRATI</th>
+										<td>CARBOIDRATI</td>
 										<td><%= prodotti.get(0).getEtichetta().getCarboidrati() + " g"%></td>
 									</tr>
 									<tr>
-										<th>GRASSI</th>
+										<td>GRASSI</td>
 										<td><%= prodotti.get(0).getEtichetta().getGrassi() + " g"%></td>
 									</tr>
 									<tr>
-										<th>GRASSI SATURI</th>
+										<td>GRASSI SATURI</td>
 										<td><%= prodotti.get(0).getEtichetta().getGrassiSaturi() + " g"%></td>
 									</tr>
 									<tr>
-										<th>FIBRE</th>
+										<td>FIBRE</td>
 										<td><%= prodotti.get(0).getEtichetta().getFibre() + " g"%></td>
 									</tr>
 									<tr>
-										<th>SODIO</th>
+										<td>SODIO</td>
 										<td><%= prodotti.get(0).getEtichetta().getSodio() + " g"%></td>
 
 									</tr>
@@ -79,31 +83,35 @@
 							<table class="table border">
 								<tbody>
 									<tr>
-										<th>VALORE ENERGETICO</th>
+										<th>VALORI NUTRIZIONALI</th>
+										<th>PER 100 g</th>
+									</tr>
+									<tr>
+										<td>VALORE ENERGETICO</td>
 										<td><%= prodotti.get(1).getEtichetta().getValoreEnergetico() + " Kcal"%></td>
 									</tr>
 									<tr>
-										<th>PROTEINE</th>
+										<td>PROTEINE</td>
 										<td><%= prodotti.get(1).getEtichetta().getProteine()  + " g"%></td>
 									</tr>
 									<tr>
-										<th>CARBOIDRATI</th>
+										<td>CARBOIDRATI</td>
 										<td><%= prodotti.get(1).getEtichetta().getCarboidrati() + " g"%></td>
 									</tr>
 									<tr>
-										<th>GRASSI</th>
+										<td>GRASSI</td>
 										<td><%= prodotti.get(1).getEtichetta().getGrassi() + " g"%></td>
 									</tr>
 									<tr>
-										<th>GRASSI SATURI</th>
+										<td>GRASSI SATURI</td>
 										<td><%= prodotti.get(1).getEtichetta().getGrassiSaturi() + " g"%></td>
 									</tr>
 									<tr>
-										<th>FIBRE</th>
+										<td>FIBRE</td>
 										<td><%= prodotti.get(1).getEtichetta().getFibre() + " g"%></td>
 									</tr>
 									<tr>
-										<th>SODIO</th>
+										<td>SODIO</td>
 										<td><%= prodotti.get(1).getEtichetta().getSodio() + " g"%></td>
 									</tr>
 								</tbody>
@@ -160,31 +168,35 @@
 							<table class="table border">
 								<tbody>
 									<tr>
-										<th>VALORE ENERGETICO</th>
+										<th>VALORI NUTRIZIONALI</th>
+										<th>PER 100 g</th>
+									</tr>
+									<tr>
+										<td>VALORE ENERGETICO</td>
 										<td><%= prodotto.getEtichetta().getValoreEnergetico() + " Kcal"%></td>
 									</tr>
 									<tr>
-										<th>PROTEINE</th>
+										<td>PROTEINE</td>
 										<td><%= prodotto.getEtichetta().getProteine() + " g"%></td>
 									</tr>
 									<tr>
-										<th>CARBOIDRATI</th>
+										<td>CARBOIDRATI</td>
 										<td><%= prodotto.getEtichetta().getCarboidrati() + " g"%></td>
 									</tr>
 									<tr>
-										<th>GRASSI</th>
+										<td>GRASSI</td>
 										<td><%= prodotto.getEtichetta().getGrassi() + " g"%></td>
 									</tr>
 									<tr>
-										<th>GRASSI SATURI</th>
+										<td>GRASSI SATURI</td>
 										<td><%= prodotto.getEtichetta().getGrassiSaturi() + " g"%></td>
 									</tr>
 									<tr>
-										<th>FIBRE</th>
+										<td>FIBRE</td>
 										<td><%= prodotto.getEtichetta().getFibre() + " g"%></td>
 									</tr>
 									<tr>
-										<th>SODIO</th>
+										<td>SODIO</td>
 										<td><%= prodotto.getEtichetta().getSodio() + " g"%></td>
 
 									</tr>
