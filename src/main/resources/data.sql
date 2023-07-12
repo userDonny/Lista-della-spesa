@@ -9,7 +9,6 @@ La finalità principale delle cooperative di consumatori consiste nel tutelare i
 Coop Italia, nonostante la somiglianza nel nome e nel logo, non ha alcun rapporto societario con Coop Svizzera né con la norvegese Coop Norge né con la nederlandese Coop.','https://www.coop.it/');
 
 
- -- insert di catena_prodotto da concludere (sarebbero 4(riferito a catene) prezzi per prodotto )
 INSERT INTO catena_prodotto VALUES ('1','0.99',default,'1','001');
 INSERT INTO catena_prodotto VALUES ('2','0.80',default,'2','001');
 INSERT INTO catena_prodotto VALUES ('3','0.88',default,'3','001');
@@ -276,8 +275,6 @@ INSERT INTO catena_prodotto (id, prezzo, catena_id, prodotto_id) VALUES ('263', 
 INSERT INTO catena_prodotto (id, prezzo, catena_id, prodotto_id) VALUES ('264', '1.79', '4', '066');
 
 
-
--- insert di prodotto pressochè concluse manca solo da definire descrizione di ogni prodotto(4' campo attualmente null)
 insert into prodotto values('001','Limoni','Monachello',null,'1.0','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw181c2326/large/LIMONIGR500-8034076480130-1.jpg','https://shorturl.at/anuxF','3','2');
 insert into prodotto values('002','Mele Golden','Melinda',null,'1.0','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw48ba7080/large/MeleGolden900g-8004381107008-1.jpg','https://shorturl.at/bksM9','2','2');
 insert into prodotto values('003','Nutella','Ferrero',null,'1.0','https://www.carrefour.it/on/demandware.static/-/Sites-carrefour-master-catalog-IT/default/dw8dfcdf17/large/NUTELLAVASETTOGR450-0000080050865-1.png','https://shorturl.at/efiv4','1','10');
@@ -363,30 +360,30 @@ insert into categoria values('12','https://www.carrefour.it/on/demandware.static
 
 
 
-insert into etichetta values('1','6.3','57.5','30.9','10.6','0','0.107','539.0');   -- nutella
-insert into etichetta values('2','0.300','14','0','0.200','2.29','0.100','53.0');  -- mele
-insert into etichetta values('3','0.100','0.200','0','0','1.0','0.200','20.0');  -- limoni
-insert into etichetta values('4','0.8','10.0','0.1','0.0','1.2','0.1','48.0');  -- albicocche
-insert into etichetta values('5','1.9','0.0','0.4','0.0','4.0','1.0','48.0');  -- pomodori
-insert into etichetta values('6','0.4','45.0','0.1','0.1','0.8','0.1','188.0'); -- marmellata di frutta  
-insert into etichetta values('7','0.0','0.0','0.0','0.0','0.0','0.350','0.0');  -- acqua 
-insert into etichetta values('8','0.3','11.0','0.1','0.0','0.0','0.8','45.0');  -- red bull
-insert into etichetta values('9','3.30','4.90','0.10','0.070','0.0','0.13','143.0');  -- latte
-insert into etichetta values('10','0.0','29.0','32.0','4.0','0.0','1.5','398.0');  -- formaggio
-insert into etichetta values('11','31.0','0.0','3.6','1.0','0.0','0.074','165.0');  -- petto di pollo
-insert into etichetta values('12','22.0','2.4','26.0','9.0','0.0','0.174','336.0');  -- salame 
-insert into etichetta values('13','20.0','0.0','13.0','3.1','0.0','0.05','208.0'); -- salmone
-insert into etichetta values('14','29.0','0.0','0.6','0.2','0.0','0.054','130.0'); -- tonno
-insert into etichetta values('15','3.9','29.0','6.7','1.5','0.2','2.0','192.0'); -- patatine surgelate
-insert into etichetta values('16','2.8','25.0','10.0','8.7','0.0','0.017','201.0'); -- gelato in vaschetta
-insert into etichetta values('17','0.0','31.0','0.9','0.0','1.8','0.001','158.0');  -- spaghetti
-insert into etichetta values('18','2.0','28.0','0.4','0.1','0.4','0.001','130.0'); -- riso
-insert into etichetta values('19','0.0','0.0','0.0','0.0','0.0','0.0','222.0'); -- jack daniels
-insert into etichetta values('20','0.4','2.8','0.0','0.0','0.0','0.001','120.0'); -- birra moretti
-insert into etichetta values('21','1.0','1.2','35.0','4.0','1.9','1.5','326.0'); -- condimento insalata di riso
-insert into etichetta values('22','2.9','10.8','1.9','0.5','3.8','0.040','80.0'); -- mais in scatola
-INSERT INTO etichetta values('023','0.9','9.5','0.2','0.0','1.5','0.0','40.0'); -- pesche
-INSERT INTO etichetta values('024','1.2','15.4','0.3','0.0','1.8','0.0','89.0'); -- banane
+insert into etichetta values('1','6.3','57.5','30.9','10.6','0','0.107','539.0');   
+insert into etichetta values('2','0.300','14','0','0.200','2.29','0.100','53.0');  
+insert into etichetta values('3','0.100','0.200','0','0','1.0','0.200','20.0');  
+insert into etichetta values('4','0.8','10.0','0.1','0.0','1.2','0.1','48.0');  
+insert into etichetta values('5','1.9','0.0','0.4','0.0','4.0','1.0','48.0');  
+insert into etichetta values('6','0.4','45.0','0.1','0.1','0.8','0.1','188.0');   
+insert into etichetta values('7','0.0','0.0','0.0','0.0','0.0','0.350','0.0');  
+insert into etichetta values('8','0.3','11.0','0.1','0.0','0.0','0.8','45.0');  
+insert into etichetta values('9','3.30','4.90','0.10','0.070','0.0','0.13','143.0');  
+insert into etichetta values('10','0.0','29.0','32.0','4.0','0.0','1.5','398.0'); 
+insert into etichetta values('11','31.0','0.0','3.6','1.0','0.0','0.074','165.0');  
+insert into etichetta values('12','22.0','2.4','26.0','9.0','0.0','0.174','336.0'); 
+insert into etichetta values('13','20.0','0.0','13.0','3.1','0.0','0.05','208.0'); 
+insert into etichetta values('14','29.0','0.0','0.6','0.2','0.0','0.054','130.0'); 
+insert into etichetta values('15','3.9','29.0','6.7','1.5','0.2','2.0','192.0');
+insert into etichetta values('16','2.8','25.0','10.0','8.7','0.0','0.017','201.0'); 
+insert into etichetta values('17','0.0','31.0','0.9','0.0','1.8','0.001','158.0');  
+insert into etichetta values('18','2.0','28.0','0.4','0.1','0.4','0.001','130.0'); 
+insert into etichetta values('19','0.0','0.0','0.0','0.0','0.0','0.0','222.0'); 
+insert into etichetta values('20','0.4','2.8','0.0','0.0','0.0','0.001','120.0'); 
+insert into etichetta values('21','1.0','1.2','35.0','4.0','1.9','1.5','326.0'); 
+insert into etichetta values('22','2.9','10.8','1.9','0.5','3.8','0.040','80.0'); 
+INSERT INTO etichetta values('023','0.9','9.5','0.2','0.0','1.5','0.0','40.0');
+INSERT INTO etichetta values('024','1.2','15.4','0.3','0.0','1.8','0.0','89.0');
 INSERT INTO etichetta (id, proteine, carboidrati , grassi , grassi_saturi, fibre, sodio, valore_energetico) VALUES ('025', '0.5', '10.00', '0', '0.00', '1', '2', '40');
 INSERT INTO etichetta (id, proteine, carboidrati , grassi , grassi_saturi, fibre, sodio, valore_energetico) VALUES ('026', '4.4', '1.80', '23', '2.70', '3.3', '2', '231');
 INSERT INTO etichetta (id, proteine, carboidrati , grassi , grassi_saturi, fibre, sodio, valore_energetico) VALUES ('027', '2', '4.30', '0', '0.00', '0', '7', '17');
